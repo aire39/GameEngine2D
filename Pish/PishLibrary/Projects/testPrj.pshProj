@@ -1,0 +1,70 @@
+@IMAGES
+./Textures/blank.jpg 0
+./Textures/PAVE.bmp 1
+./Textures/CLIFFVEG.bmp 1
+./Textures/ditch_seamless.jpg 0
+./Textures/test.png 0
+./Textures/zhome.png 0
+./Textures/floor0.png 0
+./Textures/Bg_Hill.png 0
+./Textures/Bg_Hill2.png 0
+./Textures/Bg_Hill.png 0
+./Textures/LittleBush.png 0
+./Textures/LittleBush_1.png 0
+./Textures/marioLogo.png 0
+./Textures/tube.png 0
+./Textures/brick.png 0
+./Textures/sbrick.png 0
+./Textures/scloud.png 0
+./Textures/blank_pointbox.png 0
+./Textures/pointbox.png 0
+./Textures/stairs1.png 0
+./Animation/link_anim_run_0/LinkRunR1.png 0
+./Animation/link_anim_run_0/LinkRunR2.png 0
+./Animation/link_anim_run_0/LinkRunR3.png 0
+./Animation/link_anim_run_0/LinkRunR4.png 0
+./Animation/link_anim_run_0/LinkRunR5.png 0
+./Animation/link_anim_run_0/LinkRunR6.png 0
+./Animation/link_anim_run_1/LinkRunShieldD1.png 0
+./Animation/link_anim_run_1/LinkRunShieldD2.png 0
+./Animation/link_anim_run_1/LinkRunShieldD3.png 0
+./Animation/link_anim_run_1/LinkRunShieldD4.png 0
+./Animation/link_anim_run_1/LinkRunShieldD5.png 0
+./Animation/link_anim_run_1/LinkRunShieldD6.png 0
+./Animation/link_anim_run_1/LinkRunShieldD7.png 0
+./Animation/link_anim_run_1/LinkRunShieldD8.png 0
+./Animation/link_anim_run_1/LinkRunShieldD9.png 0
+./Animation/link_anim_run_2/LinkRunU1.png 0
+./Animation/link_anim_run_2/LinkRunU2.png 0
+./Animation/link_anim_run_2/LinkRunU3.png 0
+./Animation/link_anim_run_2/LinkRunU4.png 0
+./Animation/link_anim_run_2/LinkRunU5.png 0
+./Animation/link_anim_run_2/LinkRunU6.png 0
+./Animation/link_anim_run_2/LinkRunU7.png 0
+./Animation/link_anim_run_2/LinkRunU8.png 0
+./Animation/mario_animation/mario_die.png 0
+./Animation/mario_animation/mario_stand.png 0
+./Animation/mario_animation/mario_run0.png 0
+./Animation/mario_animation/mario_run1.png 0
+./Animation/mario_animation/mario_run2.png 0
+./Animation/mario_animation/mario_jump.png 0
+./Animation/mario_animation/mario_turn.png 0
+@IMAGES_END
+
+@IMAGELIST
+./UI_Images/folder.gif
+./UI_Images/scene_icon32x32.gif
+./UI_Images/project_icon32x32.gif
+./UI_Images/scene_icon32x32_v2.gif
+./UI_Images/psh_properties_icon32x32.gif
+./UI_Images/position_icon32x32.gif
+./UI_Images/rotation_icon32x32.gif
+./UI_Images/scale_icon32x32.gif
+./UI_Images/layer_icon32x32.gif
+./UI_Images/colorwheel_icon32x32.gif
+./UI_Images/psh_script_icon2.gif
+@IMAGELIST_END
+
+@TOOL_IMAGES
+./UI_Images/pBrush.gif
+@TOOL_IMAGES_END

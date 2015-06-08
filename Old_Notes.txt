@@ -1,0 +1,890 @@
+NOTE 1:
+-----------
+Works with event.
+Code is less than looks.
+plan to clean all that comment to have orginal version and new version. [Check]
+need to get the fps counter up to the window title or create a text display within ogl window. [Check]
+
+Update:
+------------
+*Huge!!!
+ - Works with shaders and editable shaders using the extension .vert and .frag
+ - Shader Management Class
+   - Can hold multiple shaders easy
+   - Easy to call which shader you want by name or id (haven't tested by name though it should work as long as ext. is included)
+ - uses VBO's
+ - uses texture VBO's
+ - Camera panning and zooming
+ - An animation Test (No real management whatsoever at the moment)
+
+*Code is documented and commented pretty well.
+
+
+*Shader manager still needs to be completed (but is pretty much done)
+*Will add the shader log stuff later
+*will add the "can my videocard use this feature" check.
+*Check against compilation with linux (using preprocessors to split windows and linux code)
+
+*Fix mouse drag (will lose focus with drawn objects)
+*Need to add Ray Intersection to select sprites
+*Need to create a draw class manager. This will need an implementation of a bsp tree for sorting (alpha blending stuff) and performance.
+
+*Extra Stuff
+ - Fustrum
+ - WireFrame Mode
+ - Depth Test
+
+**Libarary that might be useful later : CImg
+  Can load Hdr and another useful format.
+
+
+
+Update:
+------------
+
+*Worked on fixing the shader management. Texture shader is actual using the texture image this time.
+*Added a wireframe (though not really implemented.)
+
+
+Update:
+-------------
+*A lot!!!
+    -Basic Selection : per and multi (multi needs work)
+    -Selection Marker
+    -Draw Management
+    -Shader Management (more work was done to it almost complete)
+    -Dimensional management. Not complete but will allow 2d or 3d work (will need to be chosen from start)
+    -Individual change of sprites shader usage.
+    -Basic transperancy for objects (not based on image yet).
+
+
+*draw management doesn't yet use a bsp tree design yet. (basic linear drawing)
+*Will change to the devil image library to load textures instead of wxWidgets image manipulation.
+*Will create a base class called object then make sprite class and any other 2d/3d specific object inherit off of
+it.
+
+*Layer management needed
+*Texture Management
+*Expand the Shader Management more
+*Work with 3d.
+
+
+Update:
+---------------
+
+*finish layer work (changing an array of sprites to a vector of array sprites for better management  for itself and use of layers)
+ -more done but not finished. theres still the need to adjust the select functions
+*texture management (basic atm because I have a crappy video card so I can't really use shaders)
+*use indices with vertices for the sprites. (should improve performance a little and might as well get used to it if not)
+*basic import/load info when those above are completed
+
+*then the UI.
+
+--There's more but can't remember right now.
+
+
+Update:
+----------------
+*Layers almost complete
+ -Problem with selecting individual block on layers higher than the base look at function selectedDraw().[causes crash]
+ -fix spelling for layor to layer.
+
+*As far as I can tell indices are used.
+
+*texture management will be in progress (basic atm because I have a crappy video card so I can't really use shaders)
+
+*then the UI.
+
+Update: ???
+------------------
+*Layers almost complete
+ -Problem with selecting individual block on layers higher than the base look at function selectedDraw().[causes crash]
+  I have an idea though so I left a c-style comment note.
+ -fix spelling for layor to layer. [Still]
+
+*I couldn't tell before if indices or even vbo's were truely being used but I can definently say they are being used. There's
+also I huge jump in performance beause of this.
+
+     Statistics:
+      *Is possible to have up to 125+ layers with decent fps (I'm not using a brand name video card so this is on board)
+        -100,000 triangles
+        -5fps with 1280x1024 still editable just not smooth
+        -20fps with 640x480
+
+      Yes, I very well know that there shouldn't be the need for a 2d game to have well over 100 layers.
+
+*Texture Management (researching)
+
+*UI
+
+**Wierd things:
+    *glDeleteBuffersARB is apparently completely different from glDeleteBuffers since the first was one of the causes of the
+    application crashing. Though there supposed to be the exact same function with the same argument the later seems to be the one
+    that works and is supposed to be used although it may be due to my on board video.
+
+    so glDeleteBuffersARB will cause a crash and glDeleteBuffers will not.
+
+Update: ???
+----------------------
+*Started change from using wxImage to an image library called CIMG. It's works pretty well though I really wanted to use DevIL
+but there seems to be problems with the lib files since it always gives me linker errors.
+
+*Note: wxImage getdata function only returns RGB values and not the alpha for some stupid reason. so there is no way to use alpha with
+wxImage hince the switch to a different image library.
+
+
+*CImg is not off the hook either as I still can't get opengl to be okay with alpha components. But it's not bad plus has a mess
+load of features.
+
+*When transperancy and masking works I will move on.
+
+Update: 4 days ago
+----------------------
+*Started another image library change because CImg isn't helpful either for including alpha. Though it's not to it isn' worth looking
+at for scientific or inage minupulation purposes.
+
+I ended up getting DevIL to work, How?
+ - I needed mingw utilities
+ - there's a program tool called reimp
+ - I put the dll's and lib's in the mingw/bin where I extracted and just added the utilities to.
+ - from the command console and the the directory of mingw/bin I call reimp on each library [ie. reimp DevIL.lib]
+ - It did all the work for me ( I tried what this does manually and it didn't work ).
+ - Cut and paste new and old files (old files being the DevIL dll's and libs) into the directory of DevIL/lib.
+ - Link them and it should work.
+
+ DevIL is far more better as it support a whole lot of image formats. Since I have the new version there seems to be a few things
+ to remember when I tested it.
+  - .tga formats don't appear in the right color but rather inverted for some reason. (okay one thing I think)
+
+*I need to work on masking but since I'm new to the library may take a little time. I may be able to fix .tga format also .bmp since their
+data is backwards.
+
+*Also fixed it so that file lookups will be localized so there should be no need to put the full path of anything.
+
+
+
+Update: 3 days ago
+---------------------------
+*Fixed the backwards format for the .tgs and .bmp formats.
+*Added a masking function. There are 2 functions (automatically adds an alpha layer)
+  - clearKey() takes the first pixels color and based on that color converts it's alpha to 0.
+  - clearKey(R, G, B) accepts 3 Arg. and specifies which color will be masked out turning that color to an alpha of 0.
+
+*white(255, 255, 255) will not work correctly for some reason. It only half works? maybe driver issue?
+
+
+
+Update: 2 days ago
+----------------------------
+Note On drawMng: This class was specifically made to be able to focus only on drawing functions and such. It would be no different
+if I had all it's members and functions in the GLFrame class. It makes it easier to deal with and doesn't create more clutter spacing
+out the lot of code and creating focus. With that point in mind I'm not going to bother with imageContext though escentially it's the same
+as GLFrame with drawMng.
+
+*Window contexts should easily be switch. (not complete because there will be a problem with focus though it is there)
+ -There's a problem of ownership with OGLWin. Need a Class that doesn't inherit off of wxFrame to make contexts switchable
+
+
+Update: 13 Oct '08 (1)
+-------------------------------
+*Doing a demo study for wxWidgets windows. I have not much knowledge and it seems a little more annoying complex than originally
+thought. The project Should be found under the demo folder.
+
+ *What does this mean?
+    -Will know how the windowing system really works or at least have a decent enough understanding.
+    -will be able to create the imageWin which handles viewing image managing specifically then easily is able to feed it over to
+    the rendering window.
+    -Will be able to complete the texMng
+    -Will be able to view both the render window and the texture window and do user inputs and such to affect layer out come.
+    -Also will be easy to understand how to add the tree viewer (using xml style files) and other window types.
+    -Will help with understanding event handling (This is a big one)
+
+*Right now the project is set to view the rendering window but code can easily be switch to view the texWin though atm it is
+hardcoded.(tried not to but caused crashs).
+
+*When the basic window layout and such get thrown in code refactoring and clean up will have to be done.
+*Tools will be next on the list. (will probably start with collision splines/biezeirs tool and select tool[basically does nothing but
+ show info on whats clicked] )
+
+
+Update: 13 Oct '08 (2)
+------------------------------------
+*Basic Windowing has been set up. At the moment it doesn't mean it's properly set up but it's a good beginning.
+*The 2 Ogl windows will not work along side each other and is properly due to context ownership.[Will crash program]
+
+*Still look at (1)
+
+Update: 15 Oct '08
+-------------------------------------
+*I have gotten multiple gl windows to work though not completely there are a few things to fix:
+
+    *Need global idle function
+        - There seems to be the point that only one OnIdle Event can exist. Since this is the case there are 2 options. 1)Make use of
+        the timer classes (start timer, stop timer) or the easiest would be to have winMng control the timing and insert functions from
+        the gl type windows that give the correct draw and use of context.
+
+    *Need camera matrix store
+        -Since almost no matter what you are access the same ogl context (technically you are) the ogl window types need to store a view/
+        camera matrix that way when you enter on frame or leave frame the camera should always stay at it actual position.
+
+    *window overlapping problem
+        -Window Panes will overlap leaving you without a way to fix it. It also will not resize itself instead forcing n'th window to
+        to resize itself accordinly.
+
+    *SetCurrent Situation
+        -This is now the cause of how ogl works and crashes the app. More than 2 wxGLCanvas are possible just that SetCurrent has to be
+        used correctly or SOUND[crashhh!!!]. Plus helps retain respective event commands.
+
+*Program Crashes if I close View Space Pane then image Pane. The Image Pane or the class on it's behalf is probably trying to delete
+itself when it's already been deleted or something is not deleting correctly. Problem has to do with imageWin or imageContext.
+
+*When solved the next step is the implemetation of the texMng and controls for the imageWin.
+
+
+**May Not Need but probably use anyway (Heads up)
+ -OGLWin, imageWin
+    -- I should be able to use this by themselves. Also the code that it wxGLCanvas probably would be moved to a wxGLContext
+    class. I think it's supposed to be this way in general anyways but this may be a hassle so it's maybe. It probably won't
+    make much of a difference anyway.
+
+ -drawMng
+    --Just there to give focus though I might Keep it for this reason.
+
+In any case this will have to be shapened up and clean at least if there's no change.
+
+
+*Make sure MessageBoxes get put in front of app.
+
+
+Update 18 Oct '08
+---------------------------------------------
+* I fixed the setcurrent situation.
+    -It had to do with using event.skip because what happens at least fot the ogl case is that one wants pure ownership of onPaint.
+    to fix this a boolean was created to turn on/off event skipping letting the window wntered take priority over onpaint and when
+    leaving( by mouse) losing control of onpaint so that a window entered can take over. Another thing is when using the events in
+    which the mouse is supposed to do nothing like a switch case default event.skip needs to be used so that the other mouse type
+    events can work properly.
+
+
+
+Update 21 Oct '08
+-----------------------------------------
+*There is no need for a global idle since ogl swaps buffers fine.
+*The window overlapping problem seems to exist if there is no central pane
+*set current situation is fixed
+*No need for camera matrix for the different views most likely because its already accounted for the way I set it up.
+    -Moved Camera type code to deminsion class and created new function cam2DPan and cam2DZoom.
+
+*Image Editor is coming along nicely
+    *Performance problems: It may be because I have too many conditions and need to find a way for a function to do it directly witout
+    conditional loops this should solve the performance problem.
+
+    *Camera movement works
+    *Switch between single tex mode or sub tex mode
+    *texsubs work
+
+
+*Performance issue to be fixed
+*Object selection
+*texture manager set up
+*imageViewer toolbar?
+*connection of imageViewer and glViewer
+*Add imageViewer to menu->view section
+*Still need to fix GLFrame's picking on higher layers without crash
+
+
+*Performance Issue [Thoughts]:
+ -Create multiple tex ids for the sub?
+ -push_back the results into container[vector]?
+ -A direct way to rebuild per sub tex?
+
+    --Needs to be fixed big time. causes massive memory usage which means
+      I'm creating memory when I shouldn't be.
+
+Update 21 Oct '08 (2)
+-----------------------------------------
+
+*Performance issue fixed [though I'm not satified by it at all]
+    -I created multiple texture ids to handle the switching and displaying of the textures. Though this worked I wasn't able to
+    internally do this and thus had to create a dummy function called setBlockPosD which is called when I press the key to switch to
+    block mode.
+
+
+Update 01 Nov '08 [Small update]
+-----------------------------------------
+*Added Shader Log Functions to output Shader Errors by console or file.
+
+[From unknown date: somewhere between last and this update]
+*Had fixed the internal issue from previous update.
+*imageViewer is a part of the view menu bar.
+
+Update 05 Nov '08
+------------------------------------------
+*Started working on the texMng. So far the imageWin is the only one connected to with it.
+    -Doesn't show automatically the image when I switch from one another. I have to press the mode_t
+    key (s or b) to show texture though I only have to do it once per texure.
+
+    -Block mode does not display the texture correctly
+
+    -(.png's) crash the program [happens when buildTexture is called on it: may be an offset problem].
+        --The problem with .jpg is glumipmap2D doesn't like 1x1 texs; .png crashed because it didn't have an alpha layer.
+
+    -texMng atm loads from a dummy project file [For this particular case it loads textures from a project file]
+
+    -If texture is not found texMng does not clean up after itself yet. [It should destroy an added texture with no file found or not do
+                                                                         anything]
+
+    -I should probably reference the functions to allow the texMng parent to be updated.
+
+*Object selection [revise? would it be much better to have ray intersection instead of selection mode?]
+*texture manager set up [In Progress]
+*imageViewer toolbar?
+*connection of imageViewer and glViewer
+*Still need to fix GLFrame's picking on higher layers without crash
+
+Update 08 Nov '08
+----------------------------------------
+*Note: Remember to call glGenTextures when the context is running. It will not create a texture id correctly if this is not done.
+
+*Single Block Mode works correctly but Block Mode is another problem.
+  -It has to do with something in texBlock::setBlockPos it's probably because texBlock::buildTexture(int id_iter) is called
+
+Update 11 Nov '08
+----------------------------------------
+*Cause for crash when creating subBlocks:
+ --I hadn't finished completing the texBlock class specifically the buildTex function for the block mode. .jpg and .png are not
+ setup completely and crash as a result of it. the actual crash was caused by the fact that the .png file didn't have an alpha
+ and gluBuild2DMipmaps was thinking it had an alpha component which it didn't and crashed the program. I need to make sure that
+ formats that can have an alpha is taking into consideration. No need to worry about .jpgs, .bmp because they don't support them
+ anyway. Also I need to set up a maximum wxh allowed to do the block mode or it will just return what the single mode would. A size
+ too small does not benefit from block mode ie 1x1.
+
+Update 20 Nov '08
+-----------------------------------------
+*Fixed picking for the gl_context class.
+*tex and texsubBlocks work fine
+*Updated math library
+    - support for 4x4 matrix and math related to matrixs. Updated the Vec math components also
+
+*Sprite class got updated to use math type vector for holding position and updating position.
+ -SetPosition is meaningful now.
+
+*Shader class outputs the log to console/textFile fine
+
+*Changed gl_context(GLFrame) mouse events to be more like imageContext.
+
+*Current Version of psh works and compiles under the VSC++ 2008 ide/compiler.
+
+*A weird problem with compiling when using a shader. It crashes but I can't find out why. If I compile with VSC++ I don't get
+the problem anymore?
+    -Possible that my version of gcc causes the problem which then I have to test compile when I get linux running or a videocard something.
+
+*Researching on how to do picking by color values instead of using GL_SELECT. It should be a better approach because 1)the current method is deprecated
+    2)It runs slow on ati cards (only ati cards ???)
+
+    -For the time being the GL_SELECT method will be used to pick objects and such.
+
+*Will start working on hooking up the texMng to the gl_context(GLFrame).
+    --VERY IMPORTANT NOTE: texMng during loading must call loadprjfile at the end so that the ogl context both reference the texids. Atm
+    when I start the app I load the file to avoid a kinda crash then later with the last ogl type window clear the texMng and reload the
+    textures that way there shouldn't be extra textures.
+
+    --This is a really crappy way to do this and I'll fix it later. Its basically like a reload what I'm doing instead of something better
+    like a texMng::Refresh()
+
+Update 22 Nov '08
+-------------------------------------------
+*Started working on the paint tex stuff.
+    --Multiple Problems:
+        -Can't paint more than one tex at a time which makes the one dissapear.
+        -You can draw on top of an existing painted tex cool but should not be happening
+        -same as first except it deals with the layers producing same result.
+        -I'm accesing the s_info directly which I should not and later there needs to be functions that do access them.
+
+    --At the moment trying to get 1 painted tex per sprite to work is the goal before upping the version number to work on multiple
+    selections and the block type selections.
+
+    --Take a look at functions:
+        -texMng::addPickedInfo
+        -drawMng::pickObjects
+
+*imageContext has picking ability
+    -The picking is done by drawing all the sprite(s) each with a slightly different color than using glReadPixels to match which
+    sprite-object/tex was picked.
+
+    -This was extremely easy to setup and should be fairly fast which means ati shouldn't have a problem with this. It also isn't a
+    deprecated form of way of doing the picking if I were to do a opengl 3.0 app. Though the color thing(glColor*) would have to be
+    replaced by a color shader (pretty much the one I already wrote) since it's deprecated.
+
+    -It has a limitation at the moment as if used on the gl_Context there can only be a max of 256x256x256 sprites the 3rd being the
+    layer. To knock out the limitation there needs to be a way to only during picking color code the sprites in view instead of all of
+    them. This will improve performance and then there shouldn't be a limitation since there should be plans on you viewing a 256x256
+    amount of sprites plus only the first 2 components should only be needed (less code).
+
+*Also the .h and .c/.cpp files will be grouped into folders that makes sense (after below).
+
+
+*Continued work on the paint tex stuff...
+
+Update 23 Nov '08
+-------------------------------------------
+*Started working on the paint tex stuff. [Continued]
+    --Multiple Problems:
+        -Can't paint more than one tex at a time which makes the one dissapear. [FIXED]
+            -Was a matter of the texture somehow being drawn over apparently. (I'm looking at the old and new code to find the problem)
+        -You can draw on top of an existing painted tex cool but should not be happening
+        -same as first except it deals with the layers producing same result.
+        -I'm accesing the s_info directly which I should not and later there needs to be functions that do access them.
+
+    --Need to find a way to knock of unwanted textures and do a remove of the selContainer safely.
+    --Need to set this up for block mode.
+    --I have to click the texture I want to use again (from the imageContext) when I want to paint a new texture.
+
+*Renamed a few functions that better fit the description.
+    -setBlockPos changed to useTextureBlock
+
+*Heads up on improvement of sprites & textures
+    --Can be improved by checking if the client state is enabled or not and if it is then not to call those states since they are already
+    on and if not then turn them on. It should help make less calls to glEnable. [Haven't done yet] Maybe the same with the texture class
+
+
+*Continued work on the paint tex stuff...
+
+
+Update 25 Nov '08
+-------------------------------------------
+*Started working on the paint tex stuff.
+    --Multiple Problems:
+        -Can't paint more than one tex at a time which makes the one dissapear. [FIXED]
+            -Was a matter of the texture somehow being drawn over apparently. (haven't looked)
+        -You can draw on top of an existing painted tex cool but should not be happening. [FIXED]
+        -same as first except it deals with the layers producing same result. [FIXED]
+        -I'm accesing the s_info directly which I should not and later there needs to be functions that do access them. [FIXED]
+
+    --Need to set this up for block mode. [DONE]
+    --I have to click the texture I want to use again (from the imageContext) when I want to paint a new texture. [FIXED]
+    --Need to find a way to knock of unwanted textures and do a remove of the selContainer safely. [IN PROCESS (1) ] [DONE]
+
+
+*Renamed a few functions that better fit the description.
+    -texMng::addPickedInfo changed to texMng::setPickedInfo
+    -GLFrame::sInitOGL changed to GLFrame::Init
+    -GLFrame::drawOGL changed to GLFrame::Render
+    -imageContext::sInitOGL changed to imageContext::Init
+    -imageContext::drawOGL changed to imageContext::Render
+
+*Heads up on improvement of sprites & textures
+    --Can be improved by checking if the client state is enabled or not and if it is then not to call those states since they are already
+    on and if not then turn them on . It should help make less calls to glEnable. [DONE]
+
+    --Maybe the same with the texture class though the idea would be to pass the texID to the sprite. It would kill the need to loop
+    through every selTexture plus it would only ever involve pushing one ( ie texMng::s_info ) onto it probably need it anyway (It might cause a performance
+    boost). [IN PROCESS/CHECKING _ This has a relation to (1) ].   [DONE -> There is a performace boost but it will probably truely
+                                                                   benefit if I do the fustrum idea]
+
+*Need to fix the loading of the projectFile: It loads more than once because it needs to load in last opengl context. Atm it's called
+so not to cause a crash. [NEEDS FIXING]
+
+*Need to at some point change the gl_Context(GLFrame) to use color coding picking. [NOT DONE/STARTED]
+
+*Need to make draws according to whats actually is in screen (basically a fustrum) this should be a dramatic boost for drawing
+,picking(only color code what can be seen) and texturing (only texture what can be seen). [NOT DONE/STARTED]
+
+*Continued work on the paint tex stuff...
+
+
+Update 26 Nov '08
+-------------------------------------------
+*Need to fix the loading of the projectFile: It loads more than once because it needs to load in last opengl context. Atm it's called
+so not to cause a crash. [NEEDS FIXING]
+
+*Need to at some point change the gl_Context(GLFrame) to use color coding picking. [NOT DONE/STARTED] -> [DONE]
+
+*Need to make draws according to whats actually is in screen (basically a fustrum) this should be a dramatic boost for drawing
+,picking(only color code what can be seen) and texturing (only texture what can be seen). [NOT DONE/STARTED] -> [DONE]
+
+*Added the tree viewer [STILL NEEDS WORK]
+*Added file Dialog which atm is intended to open project files.[STILL NEEDS WORK]
+*Attempted to sort the sprites acoording to what their texIDs were so less calls made to glBindTexture slight improve of performace.[STILL
+NEEDS WORK].
+
+*Toolbar [HAVEN"T STARTED]
+
+*Updated the project file. Will eventually make this file type a xml type file.[HAVEN"T STARTED]
+
+*Continue with application windows...
+
+
+Update 29 Nov '08
+-------------------------------------------
+*Fustrum is complete got about guestimate 60% speed boost.
+    -Though fustrum works theres a texturing bug that will draw onto other what it shouldn't not sure why yet. [FIXED]
+    - Might do sort (probably doesn't help much)
+
+*Work on picking next and try to solve the texture bug problem.
+    - Picking one object at a time [DONE]
+    - Picking multiple [STILL IN PROGRESS - NOT ACTIVE/WORKING] -> [DONE: needs speed improvement]
+    - Texture bug [NOT SOLVED YET] -> [SOLVED (decent enough answer)]
+        -- before I would check the current sprites tex with the previous ie using Sprite::getTexID().
+
+
+*Renamed a few functions/classes that better fit the description.
+    - class Dimension changed to class Camera
+
+*Started Deprecating old pick functions
+ - drawMng::pickObjects
+ - drawMng::pickMultiObjects
+ - drawMng::selectedMultiDraw
+ - drawMng::drawList_SEL
+ - drawMng::processHits
+ - drawMng::processHits2
+
+
+*Continue with [26 Nov] stuff...
+
+Update 2 Aug '09
+-------------------------------------------------
+*Started Implementing the scriptEngine code (called scriptMng)
+    --It Works
+    --Only 2 functions exposed ATM
+    --Uses Boost.Python (BoostPro1.39!)
+
+*Making a new object manager class( entityManager ) because the script engine has to interact with
+    the objects somehow and the previous (drawMng) is more like a tileObject which should actually just be a part
+    the entityManager so everything is truely managed from one manager plus making it easier to gain access to it.
+
+    --So far it's really good. It makes it easier to destroy,add, search, retrieve objects through the objects name
+    --Each entity will have a name( actually must have one) which the user doesn't have to worry about since the
+      entityManager keeps track of all that with no problems. It keeps track by string or integer(Not Yet Done).
+
+    ---Basics Now Connected! Plus a kinda console which can be activate by pressing the key 'g' in the view window.
+        --Can Add Objects
+        --Can Delete Objects
+        --Still No Real User Interactivity (Mouse, Keyboard, etc)
+
+*Created a base class called Entity that a actual draw object can derive from so that the entity manager can easily
+    loop through all objects calling their draw function approprietly with their info.
+
+*Script Manager works though many api problems atm
+    -- Can bind a script to an object now.
+    -- Scripts bind to the objects by name.
+    -- All types of Entity's can be binded with a script including the sub entitys for Tile entity.
+    -- script files can be loaded through a file dialog.
+    --- At the moment the unbindObjectToScript does not work.
+    --- Causes of most crashes stem from the map container not liking null objects (wierd).
+
+Focus:
+-------
+*Little more time fixing issues with scripting engine
+*Look into a way to expose functionality to scripts
+*Start work on the UI : slowly at the same time get entityManager set up with the events and
+    slowly deprecate drawMng.
+
+
+Update 13 Aug '09
+-------------------------------------------------
+*Tree View Set-up Almost Complete
+    --Working on multiple scenes (same needs to be done for multiple projects but later)
+        --Done though with a couple of bugs that crash the app.
+            -ATM must make sure that the scene you want to edit is selected. right now it's not done automatically
+             through selection.
+
+    --Can set a scene to be renderable or not.
+
+*Can change some of the entities parameters through a property panel
+    --Will expose rest of parameters after multiple scene implementation
+    --Used a wxGrid for properties but will need to switch to wxPropertyGrid (something I recently downloaded to help with this)
+
+*Need to work on connect mouse events in the scene view.
+    --This will be big since I have to also connect the texture window and stuff.
+        --Features
+            -Visible Bounding Box
+            -Picking (color type picking though wil most likely change to ray/intersect later)
+            -Icons that sit above bounding box to activate certain things faster
+            -scaling, rotation, position through the mouse.
+            -paint mode will still exist.
+
+**Note: I've started making backup of all source files so that the app will definantly compile and run before making
+        major changes.
+
+Update 19 Aug '09
+-------------------------------------------------
+*Tree View UpdateLayeredWindow
+    -- The tree_view is updated to work with multiple scenes.
+    -- Fixed crash when destroying sceneID
+    -- Scene is automatically switch through clicking the scene node or right click (which is only temporary as it will return
+        to previous active scene also you have to click the scene first atm)
+
+*dataPropViewer
+    --Can change all parameters except for layer (need to rework layer management) and parameter change depending on type
+ of object.
+    --The basics are at least editable.
+
+*Better picking strategy
+    -- Any created object automatically creates a colorID and efficiently. This guareentees a 2^24 = 16.67 million different
+    colorIDs. About 4 billion if I include the alpha 2^32 instead (which I most likely will do so since the creation of colorID
+    is always continous even when the object is deleted).
+
+*Mouse Connect Events
+    -- All objects are moveable.
+    -- All objects are paintable.
+    -- All objects are pickable which you will even see it through the tree_view.
+    -- paintMode is still activated by pressing the key 'p'.
+    -- A new mode that lets you edit the subtiles for the tile entity which all of the above work the same.
+        pressing the key 'e' activates this and only if the object is of type Tile.
+
+*Fixed the need to load the projectFile more than once. Now loads Once like it should.
+    -- Needed to share context between the scene viewer and the image viewer.
+
+*Cleaning up the code a bit... still continuing to do so. (drawMng is gone:entityManager replaced it).
+
+*There are a couple of bugs here and there but that will be dealt with later unless it becomes a complete hazard.
+
+*texMng needs an update.
+    -- Needs to better handle formating of the tile block.
+        --How?
+            -- Plan to create a dialog box that when acivated will give the user the ability to format it in anyway they want.
+    --Also there is feel for a need to change the the window from a ogl context to just an iconic one instead. Well maybe.
+
+*Tile is not completely finished but it's good wnough for the time being.
+
+*Focus right now is code cleanup, scriptMng setup, Save/Load Project File.
+
+
+Update 25-26 Aug '09
+-------------------------------------------------
+*Working on connecting the scriptMng and updating it to work with the multiple scenes.
+    -- Loading a script through the treeView.
+    -- Loading from file is more organized
+    -- A resource list that show all scripts loaded.
+    -- can load script to object from resource or creating a new script.(new script not implemented yet)
+    -- script can be updated from the textEditor. (Internally on already loaded script memory)
+
+*There are a lot of bugs but won't work on them until scriptMng + Animation + Load/Save projectTreeView
+ and others are at least to good enough working conditions but I will work on a bug here and there and those
+ that definitely cause things to completely break.
+
+*Focus: more work on coding the scriptMng.
+    -- scripts can modify attached objects position (working on rot, scale, and others)
+
+    -- need to make sure that the scripts can be bounded to more than one object.
+    (objects can share the same script). should also make a function that duplicates the script also.
+
+    --When the objects name changes the script bound name also needs to change to match the renamed object.
+
+    *Bug: When trying to view the script for editing if more than one script is loaded and attached it will
+        create a problem effectively erasing the script data from one of the scripts attached to the object.
+        This is caused when using the popup menu from the treeView. (View only one file for the time being)
+        [FIXED]: Needed to unset the pointer for the script as the app got confused trying to do load script
+        and switch over the other script memory (events run on threads so that's why).
+
+
+///Write More Later
+
+Update 5 Oct '09
+-------------------------------------------------
+*scriptMng was worked on to better suite how the scripting should work which is a lot better.
+    -Can call on any Scene -> pshGE.SceneManage(/*scene index*/)
+    -Can get any object easily -> getSceneObject(/*object name*/)
+    -Can set objects position, size, color, text, etc
+    -Can mess with events through scripting -> FrameEvent
+    -Few Utility Functions -> object_intersect_test
+    -More to come
+
+    --It became a lot more easier to deal with embedding python and doesn't place an annoying limitation on me anymore
+        -- pointer_wrapper<> ptr() is someyhing to remember
+        -- return_value_policy< reference_existing_object>() is something to remember too though boost::python doesn't
+        recommend it so see how I could change this.
+
+*TexMng got an update
+    -Users can define the blocks now. (Alignment at the moment is off though)
+    -Still need to move out old code that handles the texBlock's with the new one that uses a map container.
+        -Important because it is not guaranteed that the ids will remain the same so I;m changing it to at least accessing
+         them through name rather than id. exmaple: a texture that should have been loaded is not there thus messing up the id numbers.
+         which would not be the case if it's by name then the correct id will be retrieved while the one not found gets set to 0 which
+         basically means no texture in opengl);
+
+
+**Things to be worked on
+ -Make objects be able to have more than one script attached. At this moment is one per object because the map container
+ doesn't know which one to choose though it's there. Suggestion map<string, vector<pScript*> >.
+
+ -Animation needs to start being built
+    -This needs to be able to take in textures from texture singles and texture blocks
+    -A dialog that's meant for the creation of the animations
+    -Lets you specify the frame, FPS, and other.
+    -When animation is completed and put together it becomes a resource and becomes an item when attached to an objectColorIDManager
+    -Needs special control if dealing with a mesh since the mesh should already come with animation.
+
+-Need Layer control
+    -The previous way was not all that good.
+    -Layer should be tied to the entityManager instead and let it handle it.
+    -Entity will have a simple variable that tells what layer it is on.
+    -entityManager itself has it's own layer too so when there are multiple scenes(entityManager)
+    -Need to let objects by-pass the entityManager level layers when needed.
+
+-Save and Load
+    -This is a big one (extremely important)
+    -I plan to save the project info as a custom xml formated file.
+    -Things that need to be included in this file when the last bit of of features is in place (for this version)
+        --Preferences
+        --Settings
+        --Options
+
+        --entityManager
+         --entity
+        --scripts
+        --textures
+        --animation
+
+*These are the 4 major things that need to be done to call this psh 1.0b 00 (beta because there's a good amount of bugs here)
+
+7 October 2009 (small update)
+--------------------------
+*Testes Animation class and it works great. They all have their own timers so it's easy to change the fps on any of the animations.
+ Just need to decide who owns the animations. The Entity or something else. Still need a AnimationManager and Widget.
+
+1 March 2010
+---------------------------
+* animationResource created
+    - Can Create Animations with existing textures
+    - Can Remove and delete them
+    - You Attach Animation to the objectColorIDManager
+    - Text Does Not Take On Any Of This But has it's own self contained Animation For The Text
+
+* Improved Moving Selected Objects
+* Improved Window Views
+* Improved Source Code (Got Rid And Cleaned Up Sections Of Code)
+    - Sprite::initSprite --> Sprite::init()
+    - Got Rid od some redundant functions and functions that were not used in the first place
+    - Code In More Places Looks A little more better formated.
+
+* Animations Can be controlled through script the normal way not through my own hack (which was for testing). Still very limited though.
+
+*textureResource is a new texture window that I may implement. I'm prerty sure it's to go alongside the improved textureManager code.
+
+
+4 March 2010
+-----------------------------
+* Was busy getting psh working with the new wxwidgets2.9 api
+    -- Windows load correctly
+    -- Most events work
+        -- Create blocks crashes program
+        -- adding a script to an object crashes program
+
+* Need to get the 2 crashes under control then go and do *1 March 2010* work
+* if possible start changing the property data to use a wxPropertyGrid instead of a wxGrid
+
+6 March 2010
+------------------------------
+* Everything seems to be back in working order (~95%)
+    -- Crashes when the script is running and a syntatical erorr occurs (like forgetting a colon)
+
+8 March 2010
+-----------------------------
+* Layering Implemented!!
+    - Works as simply as changing te layer value in the data properties panel for any objectColorIDManager
+    - Need to work on same layer objects
+
+** This unfortunately seems to create a good amount of bugs or things that don't seem to want to work anymore
+    - pScript should have worked (even maybe not crashing when editing in real time anymore)
+        - if all goes well it should be a lot easier to implement multiple attached scripts.
+    - Picking a texture in the image explorer doesn't work anymore.
+    - texBlocks are most likely not supported anymore since I changed the texMng code. So I need to get those working again.
+
+10 March 2010
+------------------------------
+* scripts don't cause a crash anymore
+    -- I find it weird though that I was forced to change from 'object ignore = exec(...)' to 'PyRun_SimpleString(...)'
+    -- textEditor was causing a problem with newline which was solved by seeting it's eol mode to LF
+
+* New script functions
+    -- setLayer and getLayer
+    -- .def functions were reorganized same with the classes for the scene objects
+
+* Most basic features are finally implemented!
+    -- Need one last basic feature and that would be saving/loading of project files (using xml).
+
+**
+    -- texblocks needs to be updated though.
+    -- I haven't checked but I'm pretty sure sub-blocks is broken
+        -- plan to have a class called Texture and another called TextureSub and improve on the loading code too.
+           with more support for formats and animated formates like .gif.
+
+    --GLFrame line ~478 I set the scene to assume active scene is the first scene
+
+* error 1784 when saving/loading projects
+
+25 March 2010
+----------------------------------
+* Saving/Loading Implemented
+    --Still needs a little more work with saving attachments though the resources do load.
+    --image, scripts, animations resources are loaded through the project file now.
+    --The old .pshproj file will go away as soon as I have implemented an xml config file fot the ui.
+    --A another type of file will be output also which will be the preferences and such.
+    --Need to save directories as relative rather than by actual dir path.
+
+* TextureViewer and imgWin/imgContext are now deprecated classes and I now use textureResource in there place.
+    --This helps solve a few opengl issues and is honestly just easier to deal with and cleaner.
+
+*I implemented a little of the new Texture and TextureSub classes
+    --Not enough at all to be usable atm.
+
+* Moved out a lot of hardcoded test since they are now easily loaded through the project file
+* Can add an image to the textureResource. Open->image
+
+*I haven't fixed the sync problem between the gpu and cpu yet thus sometimes it seems to be lost (rare with release)
+    --I have glFinish in speceifc places to help but I need to do better than that.
+
+26 March 2010
+-------------------------------------
+* Finished Implementing what I could atm for saving/loading projects
+
+30 March 2010
+-------------------------------------
+* Saving/Loading a project doesn't seem to have any problems.
+   -- new save options.
+   -- able to embed or export scripts in/out of project.
+
+* More scripting functions and control
+   -- new functions and types
+   -- static types (timer, strings, floats, bools, ints) accessable through scripting but created through application(not done yet)
+
+* Improved camera panning
+
+* Dealing with visible order with objects on the same layer -> done.
+
+* frameEvent can now deal with multiple keys pressed through scripting
+
+* Can enable an attached animation
+
+6 April 2010
+-------------------------------------
+* updated texMng and finally phased out old texblock code.
+
+* painting objects with a sub texture works now. (can technically infinitely have sub txetures but I stop it at 1 creation per texture atm)
+    -- still need to get the animation class to be able to do the same
+
+* With this all the basic application functions are now implemented but I'm not calling it a beta version yet not until the menu/preferences/window and other things are pretty
+    setup as well.
+==========================================================================================================================================
+
+**Bugs (Stays at eof):
+    *Mouse moving near border is supposed to reset but does it incorrectly and throws you from view of sprites (can't get back).
+    middle-click and drag functionality
+        --Improved it a little by increasing the region the mouse collides with and mouse warping further away. Helps a little bit.
+
+IMPORTANT NOTICE USING WXWIDGETS2.9:
+--
+    wxidgets tries to solve some x64 warnings by typedefing a defined windows type.
+    It stupidley conflicts with boost unfornatuanely so I commecnted the line out.
+
+    File: C:\wxWidgets-2.9.0\include\wx\defs.h
+    Line: 1110
+    Commented Out: typedef wxW64 ssize_t wxIntPtr;
+
+    Update: Got around the problem by trying to reorder the include files making boost last.
+
+--
+    Made a How to install wxwidgets 2.9 text in the c:\wxwidgets2.9 folder
+

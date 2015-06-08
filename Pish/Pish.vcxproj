@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D384AB76-F526-44D5-AEA8-3B22FB9952F0}</ProjectGuid>
+    <RootNamespace>Pish</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <SourcePath>$(SourcePath)</SourcePath>
+    <IncludePath>C:\Python27\include\;..\Libraries\boost158\;..\Libraries\DevIL\;..\Libraries\WxWidgets302\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>C:\Python27\libs\;..\Libraries\boost158\lib\;..\Libraries\WxWidgets302\lib\vc_dll\;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);;..\Libraries\DevIL\lib\</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Python27\include\;..\Libraries\boost158\;..\Libraries\DevIL\;..\Libraries\WxWidgets302\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>C:\Python27\libs\;..\Libraries\boost158\lib\;..\Libraries\WxWidgets302\lib\vc_dll\;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);;..\Libraries\DevIL\lib\</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>..\Libraries\WxWidgets302\lib\vc_dll\mswud\;..\Libraries\WxWidgets302\include\msvc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WXUSINGDLL;__WXMSW__;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;WINDOWS_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ForcedIncludeFiles>Windows.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;gdi32.lib;user32.lib;DevIL.lib;ILU.lib;ILUT.lib;wxbase30ud.lib;wxmsw30ud_core.lib;wxmsw30ud_gl.lib;wxmsw30ud_richtext.lib;wxmsw30ud_aui.lib;wxmsw30ud_propgrid.lib;wxmsw30ud_stc.lib;wxmsw30ud_adv.lib;wxbase30ud_xml.lib;python27.lib;boost_python-vc120-mt-gd-1_58.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WXUSINGDLL;__WXMSW__;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;WINDOWS_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Libraries\WxWidgets302\lib\vc_dll\mswu\;..\Libraries\WxWidgets302\include\msvc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>Windows.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;gdi32.lib;user32.lib;DevIL.lib;ILU.lib;ILUT.lib;wxbase30u.lib;wxmsw30u_core.lib;wxmsw30u_gl.lib;wxmsw30u_richtext.lib;wxmsw30u_aui.lib;wxmsw30u_propgrid.lib;wxmsw30u_stc.lib;wxmsw30u_adv.lib;wxbase30u_xml.lib;python27.lib;boost_python-vc120-mt-1_58.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Camera\Camera.h" />
+    <ClInclude Include="Common\amath.h" />
+    <ClInclude Include="Common\frameEvent.h" />
+    <ClInclude Include="Common\GApp.h" />
+    <ClInclude Include="Common\GLee.h" />
+    <ClInclude Include="Common\glfont2.h" />
+    <ClInclude Include="Common\primitives.h" />
+    <ClInclude Include="Common\pshdefs.h" />
+    <ClInclude Include="Common\pshsignals.h" />
+    <ClInclude Include="Common\scriptprefs.h" />
+    <ClInclude Include="Common\supportFunctions.h" />
+    <ClInclude Include="Common\threadWorker.h" />
+    <ClInclude Include="Common\UtilityFunctions.h" />
+    <ClInclude Include="Core\Animation.h" />
+    <ClInclude Include="Core\CoreObjects.h" />
+    <ClInclude Include="Core\Entity.h" />
+    <ClInclude Include="Core\GLFrame.h" />
+    <ClInclude Include="Core\Mesh.h" />
+    <ClInclude Include="Core\Particles.h" />
+    <ClInclude Include="Core\pScript.h" />
+    <ClInclude Include="Core\PSysBoids.h" />
+    <ClInclude Include="Core\PSysExplode.h" />
+    <ClInclude Include="Core\PSysSmoke.h" />
+    <ClInclude Include="Core\PSysSpray.h" />
+    <ClInclude Include="Core\Shader.h" />
+    <ClInclude Include="Core\Sprite.h" />
+    <ClInclude Include="Core\Text.h" />
+    <ClInclude Include="Core\Texture.h" />
+    <ClInclude Include="Core\TextureBase.h" />
+    <ClInclude Include="Core\TextureSheet.h" />
+    <ClInclude Include="Core\TextureSub.h" />
+    <ClInclude Include="Core\Tile.h" />
+    <ClInclude Include="Dialogs\chooseAnimBox.h" />
+    <ClInclude Include="Dialogs\chooseScriptBox.h" />
+    <ClInclude Include="Dialogs\createTexBlockDlg.h" />
+    <ClInclude Include="Dialogs\entityDupDlg.h" />
+    <ClInclude Include="Dialogs\prefdialog.h" />
+    <ClInclude Include="Dialogs\ProjectDialog.h" />
+    <ClInclude Include="Dialogs\Splash.h" />
+    <ClInclude Include="IO\ProjectFile.h" />
+    <ClInclude Include="IO\UIFile.h" />
+    <ClInclude Include="Management\animationManager.h" />
+    <ClInclude Include="Management\entityManager.h" />
+    <ClInclude Include="Management\LayerManager.h" />
+    <ClInclude Include="Management\scriptMng.h" />
+    <ClInclude Include="Management\ShaderMng.h" />
+    <ClInclude Include="Management\texMng.h" />
+    <ClInclude Include="PyFunc\misc_test_pyscripts.h" />
+    <ClInclude Include="PyFunc\pshEngine.h" />
+    <ClInclude Include="PyFunc\pyFunc.h" />
+    <ClInclude Include="Window\animationResource.h" />
+    <ClInclude Include="Window\DataPropertyViewer.h" />
+    <ClInclude Include="Window\OGLWin.h" />
+    <ClInclude Include="Window\projectTreeView.h" />
+    <ClInclude Include="Window\propertyWindow.h" />
+    <ClInclude Include="Window\resourceWindow.h" />
+    <ClInclude Include="Window\textEditor.h" />
+    <ClInclude Include="Window\textureResource.h" />
+    <ClInclude Include="Window\toolBar.h" />
+    <ClInclude Include="Window\ToolBarScene.h" />
+    <ClInclude Include="Window\ToolBarTextEditor.h" />
+    <ClInclude Include="Window\winMng.h" />
+    <ClInclude Include="WizardPages\newprojectpage0.h" />
+    <ClInclude Include="WizardPages\newprojectpage1.h" />
+    <ClInclude Include="Wizards\NewProjectWiz.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Camera\Camera.cpp" />
+    <ClCompile Include="Common\frameEvent.cpp" />
+    <ClCompile Include="Common\GLee.cpp" />
+    <ClCompile Include="Common\glfont2.cpp" />
+    <ClCompile Include="Core\Animation.cpp" />
+    <ClCompile Include="Core\Entity.cpp" />
+    <ClCompile Include="Core\GLFrame.cpp" />
+    <ClCompile Include="Core\Mesh.cpp" />
+    <ClCompile Include="Core\Particles.cpp" />
+    <ClCompile Include="Core\pScript.cpp" />
+    <ClCompile Include="Core\PSysBoids.cpp" />
+    <ClCompile Include="Core\PSysExplode.cpp" />
+    <ClCompile Include="Core\PSysSmoke.cpp" />
+    <ClCompile Include="Core\PSysSpray.cpp" />
+    <ClCompile Include="Core\Shader.cpp" />
+    <ClCompile Include="Core\Sprite.cpp" />
+    <ClCompile Include="Core\Text.cpp" />
+    <ClCompile Include="Core\Texture.cpp" />
+    <ClCompile Include="Core\TextureBase.cpp" />
+    <ClCompile Include="Core\TextureSheet.cpp" />
+    <ClCompile Include="Core\TextureSub.cpp" />
+    <ClCompile Include="Core\Tile.cpp" />
+    <ClCompile Include="Dialogs\chooseAnimBox.cpp" />
+    <ClCompile Include="Dialogs\chooseScriptBox.cpp" />
+    <ClCompile Include="Dialogs\createTexBlockDlg.cpp" />
+    <ClCompile Include="Dialogs\entityDupDlg.cpp" />
+    <ClCompile Include="Dialogs\prefdialog.cpp" />
+    <ClCompile Include="Dialogs\ProjectDialog.cpp" />
+    <ClCompile Include="Dialogs\Splash.cpp" />
+    <ClCompile Include="IO\ProjectFile.cpp" />
+    <ClCompile Include="IO\UIFile.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Management\animationManager.cpp" />
+    <ClCompile Include="Management\entityManager.cpp" />
+    <ClCompile Include="Management\LayerManager.cpp" />
+    <ClCompile Include="Management\scriptMng.cpp" />
+    <ClCompile Include="Management\ShaderMng.cpp" />
+    <ClCompile Include="Management\texMng.cpp" />
+    <ClCompile Include="Management\tileEntityManager.cpp" />
+    <ClCompile Include="PyFunc\pshEngine.cpp" />
+    <ClCompile Include="Window\animationResource.cpp" />
+    <ClCompile Include="Window\DataPropertyViewer.cpp" />
+    <ClCompile Include="Window\OGLWin.cpp" />
+    <ClCompile Include="Window\projectTreeView.cpp" />
+    <ClCompile Include="Window\propertyWindow.cpp" />
+    <ClCompile Include="Window\resourceWindow.cpp" />
+    <ClCompile Include="Window\textEditor.cpp" />
+    <ClCompile Include="Window\textureResource.cpp" />
+    <ClCompile Include="Window\toolBar.cpp" />
+    <ClCompile Include="Window\ToolBarScene.cpp" />
+    <ClCompile Include="Window\ToolBarTextEditor.cpp" />
+    <ClCompile Include="Window\winMng.cpp" />
+    <ClCompile Include="WizardPages\newprojectpage0.cpp" />
+    <ClCompile Include="WizardPages\newprojectpage1.cpp" />
+    <ClCompile Include="Wizards\NewProjectWiz.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

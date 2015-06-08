@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <ScriptResource>
+    <Script name="new_script" embed="import pshObjectTests;;mms = pshGE.SceneManage(0);;obj = mms.getSceneObject(&quot;sprite1&quot;);;isect = pshObjectTests.object_intersect_test(this, obj);;print isect;"/>
+  </ScriptResource>
+  <Scene name="Scene">
+    <Entity>
+      <Data name="sprite0" type="sprite" color="rgb(255, 255, 255)" x="-0.0218818" y="2.40385" z="0" rotation="0" sx="1" sy="1" sz="1" layer="0" texture="" repeatx="1" repeaty="1" flipx="0" flipy="0">
+        <Script name="new_script" run="1"/>
+      </Data>
+      <Data name="sprite1" type="sprite" color="rgb(255, 255, 255)" x="0" y="0" z="0" rotation="0" sx="1" sy="1" sz="1" layer="0" texture="" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+    </Entity>
+  </Scene>
+</Root>

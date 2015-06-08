@@ -1,0 +1,2 @@
+I will later at some point slowly start extending my app to python modules.
+So that eventually all work is done in python( but that's way later ).

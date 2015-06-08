@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <ScriptResource>
+    <Script name="start_text_blink" embed="########;#Blink Text#;########;timer = this_script.GetVarTimer(0);bool = this_script.GetVarBool(0);;if(timer.Time() &gt; 0.25):; bool ^= True; this_script.SetVarBool(0, bool); timer.Restart();;if( bool == True):; this.setRenderable(True);else:; this.setRenderable(False);;#######;#Any Key#;#######;;scene_menu = pshGE.SceneManage(0);scene_scene = pshGE.SceneManage(1);;if(FrameEvent.keypress() &gt; 0):; print &quot;Test&quot;; scene_scene.SceneRender(1); scene_menu.SceneRender(0); ;;;;;"/>
+    <Script name="paddle_1_MoveScript" embed="#######;# Control #;#######;;if(FrameEvent.iskeydown(315) == True):; this.setPosition(this.getPosition().getx(), this.getPosition().gety()+0.1, this.getPosition().getz());;if(FrameEvent.iskeydown(317) == True):; this.setPosition(this.getPosition().getx(), this.getPosition().gety()-0.1, this.getPosition().getz());;;;;"/>
+    <Script name="paddle_2_MoveScript" embed="#######;#######;#######;;scene = pshGE.SceneManage(1);;ball = scene.getSceneObject(&quot;ball&quot;);;#######;#######;#######;;if( ball.getPosition().getx() &gt; 0.0 ):; if( ball.getPosition().gety() &gt; this.getPosition().gety()+0.1 ):;  this.setPosition(this.getPosition().getx(), this.getPosition().gety()+0.1, this.getPosition().getz()); elif( ball.getPosition().gety() &lt; this.getPosition().gety()-0.1 ):;  this.setPosition(this.getPosition().getx(), this.getPosition().gety()-0.1, this.getPosition().getz()); else:;  this.setPosition(this.getPosition().getx(), this.getPosition().gety(), this.getPosition().getz());else:; if( this.getPosition().gety() &gt; 0.1 ):;  this.setPosition(this.getPosition().getx(), this.getPosition().gety()-0.1, this.getPosition().getz()); elif( this.getPosition().gety() &lt; -0.1 ):;  this.setPosition(this.getPosition().getx(), this.getPosition().gety()+0.1, this.getPosition().getz());;;;"/>
+    <Script name="ball_MoveScript" embed="############################;#Will Handle Movement And Collision Testing#;############################;;;;;"/>
+  </ScriptResource>
+  <Scene name="menu" render="1">
+    <Entity>
+      <Data name="Title" type="text" color="rgb(255, 255, 255)" x="-6.0699" y="6.61716" z="0" rotation="0" sx="0.040466" sy="0.058559" sz="1" layer="0" text="Paddle Ball">
+        <Animation enabled="0" fps="12"/>
+      </Data>
+      <Data name="start_text" type="text" color="rgb(255, 255, 255)" x="-5.26058" y="-1.81533" z="0" rotation="0" sx="0.01" sy="0.01" sz="0.1" layer="0" text="&lt;Press Any Key To Start&gt;">
+        <Animation enabled="0" fps="12"/>
+        <Script name="start_text_blink" run="1">
+          <Var type="timer" name="timer"/>
+          <Var type="bool" name="bool" value="1"/>
+        </Script>
+      </Data>
+    </Entity>
+  </Scene>
+  <Scene name="scene" render="0">
+    <Entity>
+      <Data name="paddle_1" type="sprite" color="rgb(255, 255, 255)" x="-8.52273" y="0.240385" z="0" rotation="0" sx="-0.37037" sy="2.69231" sz="1" layer="1" texture="" repeatx="1" repeaty="1" flipx="0" flipy="0">
+        <Script name="paddle_1_MoveScript" run="1"/>
+      </Data>
+      <Data name="bg" type="sprite" color="rgb(0, 0, 255)" x="0" y="0" z="0" rotation="0" sx="10" sy="10" sz="1" layer="0" texture="" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+      <Data name="paddle_2" type="sprite" color="rgb(255, 255, 255)" x="9.20454" y="-0.119231" z="0" rotation="0" sx="-0.37037" sy="2.69231" sz="1" layer="1" texture="" repeatx="1" repeaty="1" flipx="0" flipy="0">
+        <Script name="paddle_2_MoveScript" run="1"/>
+      </Data>
+      <Data name="ball" type="sprite" color="rgb(255, 255, 255)" x="0.568182" y="-0.0600961" z="0" rotation="0" sx="0.5" sy="0.5" sz="1" layer="1" texture="" repeatx="1" repeaty="1" flipx="0" flipy="0">
+        <Script name="ball_MoveScript" run="0"/>
+      </Data>
+    </Entity>
+  </Scene>
+</Root>

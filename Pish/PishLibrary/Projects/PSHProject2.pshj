@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <TextureResource>
+    <Texture path="Animation\mario_animation\mario_turn.png" keyed="0"/>
+    <Texture path="Textures\mario_jump.png" keyed="0"/>
+    <Texture path="Textures\mario_run2.png" keyed="0"/>
+    <Texture path="Textures\mario_run1.png" keyed="0"/>
+    <Texture path="Textures\mario_run0.png" keyed="0"/>
+    <Texture path="Textures\mario_stand.png" keyed="0"/>
+    <Texture path="Animation\mario_animation\mario_die.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU8.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU7.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU6.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU5.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU4.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU3.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU2.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU1.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD9.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD8.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD7.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD6.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD5.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD4.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD3.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD2.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD1.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR6.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR5.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR4.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR3.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR2.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR1.png" keyed="0"/>
+    <Texture path="Textures\stairs1.png" keyed="0"/>
+    <Texture path="Textures\pointbox.png" keyed="0"/>
+    <Texture path="Textures\blank_pointbox.png" keyed="0"/>
+    <Texture path="Textures\scloud.png" keyed="0"/>
+    <Texture path="Textures\sbrick.png" keyed="0"/>
+    <Texture path="Textures\brick.png" keyed="0"/>
+    <Texture path="Textures\tube.png" keyed="0"/>
+    <Texture path="Textures\marioLogo.png" keyed="0"/>
+    <Texture path="Textures\LittleBush_1.png" keyed="0"/>
+    <Texture path="Textures\LittleBush.png" keyed="0"/>
+    <Texture path="Textures\Bg_Hill2.png" keyed="0"/>
+    <Texture path="Textures\Bg_Hill.png" keyed="0"/>
+    <Texture path="Textures\floor0.png" keyed="0"/>
+    <Texture path="Textures\zhome.png" keyed="0"/>
+    <Texture path="Textures\test.png" keyed="0"/>
+    <Texture path="Textures\ditch_seamless.jpg" keyed="0"/>
+    <Texture path="Textures\CLIFFVEG.bmp" keyed="0"/>
+    <Texture path="Textures\PAVE.bmp" keyed="0"/>
+    <Texture path="Textures\sprite.png" keyed="0"/>
+    <Texture path="C:\Documents and Settings\Sean\Desktop\Program Development\C++ Projects\PSH Developement\pshOgl_gEngine_a8_5 wx29\Textures\inside_linkshome.png" subx="2" suby="2" keyed="0"/>
+  </TextureResource>
+  <AnimationResource>
+    <Animation name="Anim_0">
+      <Frames f0="LinkRunR1" f1="LinkRunR2" f2="LinkRunR3" f3="LinkRunR4" f4="LinkRunR5" f5="LinkRunR6"/>
+    </Animation>
+    <Animation name="Anim_1">
+      <Frames f0="LinkRunShieldD1" f1="LinkRunShieldD2" f2="LinkRunShieldD3" f3="LinkRunShieldD4" f4="LinkRunShieldD5" f5="LinkRunShieldD6" f6="LinkRunShieldD7" f7="LinkRunShieldD8" f8="LinkRunShieldD9"/>
+    </Animation>
+    <Animation name="Anim_2">
+      <Frames f0="LinkRunU1" f1="LinkRunU2" f2="LinkRunU3" f3="LinkRunU4" f4="LinkRunU5" f5="LinkRunU6" f6="LinkRunU7" f7="LinkRunU8"/>
+    </Animation>
+  </AnimationResource>
+  <ScriptResource>
+    <Script path="./Scripts/movement_splink_AE2.py"/>
+  </ScriptResource>
+  <Scene name="Scene" render="1">
+    <Entity>
+      <Data name="object_0" type="sprite" color="rgb(255, 255, 255)" x="-5.24" y="-0" z="0" rotation="180" sx="1" sy="1" sz="1" layer="0" texture="LinkRunR4" repeatx="1" repeaty="1" flipx="0" flipy="0">
+        <Animation name="Anim_0" fps="30" enable="0" index="0"/>
+        <Script name="movement_splink_AE2" run="0"/>
+      </Data>
+      <Data name="object_1" type="sprite" color="rgb(255, 255, 255)" x="0.0420616" y="0.0235097" z="0" rotation="0" sx="1" sy="1" sz="1" layer="0" texture="inside_linkshome" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="object_2" type="sprite" color="rgb(255, 255, 255)" x="5" y="0" z="0" rotation="180" sx="1" sy="1" sz="1" layer="0" texture="sprite" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+      <Data name="object_3" type="text" color="rgb(255, 255, 255)" x="-4.75763" y="6.70534" z="0" rotation="0" sx="0.05" sy="0.05" sz="1" layer="0" text="psh project ">
+        <Animation enabled="0" fps="30"/>
+      </Data>
+    </Entity>
+  </Scene>
+</Root>

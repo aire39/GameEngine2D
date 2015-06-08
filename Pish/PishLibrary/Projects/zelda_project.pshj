@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <TextureResource>
+    <Texture path="C:\Documents and Settings\Sean\Desktop\Program Development\C++ Projects\PSH Developement\pshOgl_gEngine_a9_0 wx29\Textures\inside_linkshome.png" keyed="0"/>
+    <Texture path="C:\Documents and Settings\Sean\Desktop\Program Development\C++ Projects\PSH Developement\pshOgl_gEngine_a9_0 wx29\Animation\link_anim_run_1\LinkRunShieldD1.png" keyed="0"/>
+  </TextureResource>
+  <Scene name="Links House" render="1">
+    <Entity>
+      <Data name="Bg_house" type="sprite" color="rgb(255, 255, 255)" x="0" y="0" z="0" rotation="180" sx="10" sy="10" sz="1" layer="0" texture="inside_linkshome" repeatx="1" repeaty="1" flipx="1" flipy="0"/>
+      <Data name="Link" type="sprite" color="rgb(255, 255, 255)" x="-0.118721" y="0.218036" z="0" rotation="180" sx="1" sy="1" sz="1" layer="1" texture="LinkRunShieldD1" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+    </Entity>
+  </Scene>
+</Root>

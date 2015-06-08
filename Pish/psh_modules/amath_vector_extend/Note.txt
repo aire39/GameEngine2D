@@ -1,0 +1,4 @@
+This is a sliced version of my templated amath classes. Why? because I couldn't figure out how to make a variable
+
+a different instance of the strcutures at first but this works. Look at test.py.
+ --test.py is done this way since at atm the constrcuto in the beginning doesn't tie it correctly to variables.

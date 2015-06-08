@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <TextureResource>
+    <Texture path="Animation\mario_animation\mario_turn.png" keyed="0"/>
+    <Texture path="Textures\mario_jump.png" keyed="0"/>
+    <Texture path="Textures\mario_run2.png" keyed="0"/>
+    <Texture path="Textures\mario_run1.png" keyed="0"/>
+    <Texture path="Textures\mario_run0.png" keyed="0"/>
+    <Texture path="Textures\mario_stand.png" keyed="0"/>
+    <Texture path="Animation\mario_animation\mario_die.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU8.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU7.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU6.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU5.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU4.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU3.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU2.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_2\LinkRunU1.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD9.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD8.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD7.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD6.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD5.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD4.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD3.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD2.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_1\LinkRunShieldD1.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR6.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR5.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR4.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR3.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR2.png" keyed="0"/>
+    <Texture path="Animation\link_anim_run_0\LinkRunR1.png" keyed="0"/>
+    <Texture path="Textures\stairs1.png" keyed="0"/>
+    <Texture path="Textures\pointbox.png" keyed="0"/>
+    <Texture path="Textures\blank_pointbox.png" keyed="0"/>
+    <Texture path="Textures\cloud.png" keyed="0"/>
+    <Texture path="Textures\cloud_2piece.png" keyed="0"/>
+    <Texture path="Textures\sbrick.png" keyed="0"/>
+    <Texture path="Textures\brick_v0.png" keyed="0"/>
+    <Texture path="Textures\brick_v1.png" keyed="0"/>
+    <Texture path="Textures\brick_v2.png" keyed="0"/>
+    <Texture path="Textures\brick.png" keyed="0"/>
+    <Texture path="Textures\tube.png" keyed="0"/>
+    <Texture path="Textures\super_mario_logo.png" keyed="0"/>
+    <Texture path="Textures\LittleBush_1.png" keyed="0"/>
+    <Texture path="Textures\LittleBush.png" keyed="0"/>
+    <Texture path="Textures\Bg_Hill2.png" keyed="0"/>
+    <Texture path="Textures\Bg_Hill.png" keyed="0"/>
+    <Texture path="Textures\ground.png" keyed="0"/>
+    <Texture path="Textures\zhome.png" keyed="0"/>
+    <Texture path="Textures\test.png" keyed="0"/>
+    <Texture path="Textures\ditch_seamless.jpg" keyed="0"/>
+    <Texture path="Textures\CLIFFVEG.bmp" keyed="0"/>
+    <Texture path="Textures\PAVE.bmp" keyed="0"/>
+    <Texture path="Textures\coinbox_v0.png" keyed="0"/>
+    <Texture path="Textures\coinbox_v1.png" keyed="0"/>
+    <Texture path="Textures\coinbox_v2.png" keyed="0"/>
+  </TextureResource>
+  <AnimationResource>
+    <Animation name="mario_run">
+      <Frames f0="mario_run0" f1="mario_run1" f2="mario_run2"/>
+    </Animation>
+    <Animation name="coinbox_anim">
+      <Frames f0="coinbox_v0" f1="coinbox_v0" f2="coinbox_v1" f3="coinbox_v2"/>
+    </Animation>
+  </AnimationResource>
+  <ScriptResource>
+    <Script name="stage_wait" embed="########;########;;timer = this_script.GetVarTimer(0);print timer.Time();;########;########;;gameScene0 = pshGE.SceneManage(0);gameScene1 = pshGE.SceneManage(1);mario_object = gameScene0.getSceneObject(&quot;mario&quot;);;scene_camera.pan(0, 0);;########;########;;if(gameScene1.IsRendering() == False):; timer.Restart();;if( timer.Time() &gt; 4.9 ):; mario_object.setPosition(0.0, 0.0, 0.0); gameScene0.SceneRender(True); timer.Restart(); print &quot;Test&quot;; gameScene1.SceneRender(False);;;;;;;;;;;;;;;;;;;;;"/>
+    <Script name="mario_movement" embed="#A script that shows how to move your objects;#through scripting;;#print this_script.GetVarBool(0);#print FrameEvent.iskeydown(306);#print FrameEvent.iskeydown(314);;modscpt_stillmario = pshSE.GetScript(&quot;stage_wait&quot;);modscpt_stillmario.GetVarTimer(0).Restart();;walkrun_speed = 0.0;;#print this_script.GetVarFloat(0);;if (this_script.GetVarFloat(0) &gt;= 0.0) and (this_script.GetVarBool(1) == False):; this_script.SetVarFloat(0, this_script.GetVarFloat(0) -0.01);;if (FrameEvent.iskeydown(306) == False)and(FrameEvent.iskeydown(314) == True):; this.setPosition(this.getPosition().getx()-0.08, this.getPosition().gety(), this.getPosition().getz()); if (this.getPosition().gety() &lt;= -7.0):;  this.PlayAnimation(1);  this.SetAnimIndex(0);  this.SetAnimFPS(0, 15);  walkrun_speed = 0.08;  this_script.SetVarFloat(0, this_script.GetVarFloat(0)+0.01);  this_script.SetVarBool(1, 1);  if (this_script.GetVarFloat(0) &gt; 0.5):;   this_script.SetVarFloat(0, 0.5); else:;  this.PlayAnimation(0); if (this.isSpriteHFlip() == 1):;  this.flipSpriteH();elif (FrameEvent.iskeydown(306) == True)and(FrameEvent.iskeydown(314) == True):; this.setPosition(this.getPosition().getx()-0.25, this.getPosition().gety(), this.getPosition().getz()); if (this.getPosition().gety() &lt;= -7.0):;  this.PlayAnimation(1);  this.SetAnimIndex(0);  this.SetAnimFPS(0, 30);  walkrun_speed = 0.25;  this_script.SetVarFloat(0, this_script.GetVarFloat(0)+0.01);  this_script.SetVarBool(1, 1);  if (this_script.GetVarFloat(0) &gt; 0.5):;   this_script.SetVarFloat(0, 0.5); else:;  this.PlayAnimation(0); if (this.isSpriteHFlip() == 1):;  this.flipSpriteH();elif (FrameEvent.iskeydown(306) == False)and(FrameEvent.iskeydown(316) == True): ; this.setPosition(this.getPosition().getx()+0.08, this.getPosition().gety(), this.getPosition().getz()); if (this.getPosition().gety() &lt;= -7.0):;  this.SetAnimIndex(0);  this.PlayAnimation(1);  this.SetAnimFPS(0, 15);  walkrun_speed = 0.08;  this_script.SetVarFloat(0, this_script.GetVarFloat(0)+0.01);  this_script.SetVarBool(1, 1);  if (this_script.GetVarFloat(0) &gt; 0.5):;   this_script.SetVarFloat(0, 0.5); else:;  this.PlayAnimation(0); if (this.isSpriteHFlip() == 0):;  this.flipSpriteH();elif (FrameEvent.iskeydown(306) == True)and(FrameEvent.iskeydown(316) == True): ; this.setPosition(this.getPosition().getx()+0.25, this.getPosition().gety(), this.getPosition().getz()); if (this.getPosition().gety() &lt;= -7.0):;  this.SetAnimIndex(0);  this.PlayAnimation(1);  this.SetAnimFPS(0, 30);  walkrun_speed = 0.25;  this_script.SetVarFloat(0, this_script.GetVarFloat(0)+0.01);  this_script.SetVarBool(1, 1);  if (this_script.GetVarFloat(0) &gt; 0.5):;   this_script.SetVarFloat(0, 0.5); else:;  this.PlayAnimation(0); if (this.isSpriteHFlip() == 0):;  this.flipSpriteH();else:; this.PlayAnimation(0); this_script.SetVarBool(1, 0);;if (FrameEvent.iskeydown(32) == True)and(this_script.GetVarBool(0) == False): ; if( (this.getPosition().gety() &gt;= 3.0) and (this_script.GetVarBool(0) == False) ):;  this.setPosition(this.getPosition().getx(), this.getPosition().gety()+1.0, this.getPosition().getz());  this.setTexture(&quot;mario_jump&quot;);  this_script.SetVarBool(0, 1); if ( (this_script.GetVarBool(0) == False) ):;  this.setPosition(this.getPosition().getx(), this.getPosition().gety()+1.0, this.getPosition().getz());  this.setTexture(&quot;mario_jump&quot;);;;;if ((this_script.GetVarBool(0)) == True) and (this.getPosition().gety() &lt; -6.9999):; this_script.SetVarBool(0, 0);;scene_camera.pan(-this.getPosition().getx()*10.0, -6.6);scene_camera.zoom(0.8);;;;;;;;;;;;;;;;;;;;;;;;;;;;;"/>
+    <Script name="mario_collisions" embed="#################;#Put Gravity Onto Object #;#################;Gravity = 0.5;;this.setPosition( this.getPosition().getx(), this.getPosition().gety()-Gravity , this.getPosition().getz() );;###########;#Collision Tests #;###########;;import pshObjectTests;scene0 = pshGE.SceneManage(0);br_ground0 = scene0.getSceneObject(&quot;br_ground0&quot;);br_tube0  = scene0.getSceneObject(&quot;bpipe0&quot;);br_kill0  = scene0.getSceneObject(&quot;br_kill0&quot;);collide = pshObjectTests.object_intersect_test(this, br_ground0);collide2 = pshObjectTests.object_intersect_test(this, br_tube0);collide3 = pshObjectTests.object_intersect_test(this, br_kill0);;gamescene0 = pshGE.SceneManage(0);gamescene1 = pshGE.SceneManage(1);;#######;#######;;#print collide;;if (collide == 6):; this.setPosition( this.getPosition().getx(), this.getPosition().gety()+Gravity , this.getPosition().getz() ); this.setTexture(&quot;mario_stand&quot;);;#######;#######;;if (collide2 == 9):; this.setPosition( this.getPosition().getx()-walkrun_speed, this.getPosition().gety() , this.getPosition().getz() ); this.setTexture(&quot;mario_stand&quot;);;if (collide2 == 7):; this.setPosition( this.getPosition().getx()+walkrun_speed, this.getPosition().gety() , this.getPosition().getz() ); this.setTexture(&quot;mario_stand&quot;);;if (collide2 == 2) or (collide2 == 0) or (collide2 == 6):; this.setPosition( this.getPosition().getx(), this.getPosition().gety() +Gravity, this.getPosition().getz() ); this.setTexture(&quot;mario_stand&quot;);;if (collide3 == 2) or (collide3 == 0) or (collide3 == 6):; gamescene1.SceneRender(True); gamescene0.SceneRender(False);;#this.setPosition(0.0 ,0.0, 0.0);#print collide2;;mtime = this_script.GetVarTimer(0);;;;if( mtime.Time() &gt; 1.0 ):; mtime.Restart(); #print collide2;;;;;;;;;;;;;;;;;;;;;;;;;;;"/>
+  </ScriptResource>
+  <Scene name="Menu\Scene" render="1">
+    <Entity>
+      <Data name="ground" type="sprite" color="rgb(255, 255, 255)" x="35" y="-10.5" z="0" rotation="0" sx="70" sy="3" sz="1" layer="2" texture="ground" repeatx="90" repeaty="3" flipx="0" flipy="1"/>
+      <Data name="Bg" type="sprite" color="rgb(107, 140, 255)" x="0.103019" y="0.541923" z="0" rotation="0" sx="250" sy="50" sz="1" layer="0" texture="blank" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+      <Data name="Logo" type="sprite" color="rgb(255, 255, 255)" x="-2.46105" y="7.98385" z="0" rotation="180" sx="8" sy="6" sz="1" layer="1" texture="super_mario_logo" repeatx="1" repeaty="1" flipx="1" flipy="0"/>
+      <Data name="Bg_hill" type="sprite" color="rgb(255, 255, 255)" x="-8.01056" y="-7.17265" z="0" rotation="180" sx="2" sy="1" sz="1" layer="1" texture="Bg_Hill" repeatx="1" repeaty="1" flipx="1" flipy="0"/>
+      <Data name="Bg_Bush" type="sprite" color="rgb(255, 255, 255)" x="6.97586" y="-6.57989" z="0" rotation="0" sx="3.2" sy="1" sz="1" layer="1" texture="LittleBush" repeatx="1" repeaty="1" flipx="1" flipy="1"/>
+      <Data name="LittleBush0" type="sprite" color="rgb(255, 255, 255)" x="12.2875" y="-6.4999" z="0" rotation="0" sx="2" sy="1" sz="1" layer="1" texture="Bg_Hill2" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="pointbox0" type="sprite" color="rgb(255, 255, 255)" x="14.3752" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="1" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="10" enable="1" index="0"/>
+      </Data>
+      <Data name="brick0" type="sprite" color="rgb(255, 255, 255)" x="20.085" y="-1.02969" z="0" rotation="0" sx="1" sy="1" sz="1" layer="1" texture="brick_v0" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="brick1" type="sprite" color="rgb(255, 255, 255)" x="24" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="1" texture="brick_v1" repeatx="1" repeaty="1" flipx="1" flipy="1"/>
+      <Data name="brick2" type="sprite" color="rgb(255, 255, 255)" x="28" y="-1.02969" z="0" rotation="0" sx="1" sy="1" sz="1" layer="1" texture="brick_v0" repeatx="1" repeaty="1" flipx="1" flipy="1"/>
+      <Data name="pointbox1" type="sprite" color="rgb(255, 255, 255)" x="24" y="7.66731" z="0" rotation="0" sx="1" sy="1" sz="1" layer="1" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="10" enable="1" index="0"/>
+      </Data>
+      <Data name="pointbox2" type="sprite" color="rgb(255, 255, 255)" x="22" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="1" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="10" enable="1" index="0"/>
+      </Data>
+      <Data name="pointbox3" type="sprite" color="rgb(255, 255, 255)" x="26" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="1" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="10" enable="1" index="0"/>
+      </Data>
+      <Data name="bpipe0" type="sprite" color="rgb(255, 255, 255)" x="35" y="-7" z="0" rotation="0" sx="1.5" sy="2" sz="1" layer="1" texture="tube" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+      <Data name="tpipe0" type="sprite" color="rgb(255, 255, 255)" x="35" y="-4" z="1" rotation="0" sx="1.7" sy="1" sz="1" layer="1" texture="tube" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+      <Data name="cloud0" type="sprite" color="rgb(255, 255, 255)" x="16.8271" y="9.90692" z="0" rotation="0" sx="3" sy="4" sz="1" layer="1" texture="cloud" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="bpipe1" type="sprite" color="rgb(255, 255, 255)" x="51.554" y="-6.15765" z="0" rotation="0" sx="1.5" sy="2.25" sz="1" layer="1" texture="tube" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+      <Data name="tpipe1" type="sprite" color="rgb(255, 255, 255)" x="51.554" y="-3" z="0" rotation="0" sx="1.7" sy="1" sz="1" layer="2" texture="tube" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+      <Data name="bpipe2" type="sprite" color="rgb(255, 255, 255)" x="70" y="-5.2" z="0" rotation="0" sx="1.5" sy="3" sz="1" layer="1" texture="tube" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+      <Data name="tpipe2" type="sprite" color="rgb(255, 255, 255)" x="70" y="-1.2" z="0" rotation="0" sx="1.7" sy="1" sz="1" layer="1" texture="tube" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+      <Data name="Bg_Hill2" type="sprite" color="rgb(255, 255, 255)" x="75.5749" y="-6.14662" z="0" rotation="0" sx="4" sy="2" sz="1" layer="1" texture="Bg_Hill" repeatx="1" repeaty="1" flipx="1" flipy="1"/>
+      <Data name="bpipe3" type="sprite" color="rgb(255, 255, 255)" x="91.6257" y="-4.94355" z="0" rotation="0" sx="1.5" sy="3" sz="1" layer="1" texture="tube" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+      <Data name="tpipe3" type="sprite" color="rgb(255, 255, 255)" x="91.6" y="-1.2" z="0" rotation="0" sx="1.7" sy="1" sz="1" layer="2" texture="tube" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+      <Data name="ground2" type="sprite" color="rgb(255, 255, 255)" x="120" y="-10.5" z="0" rotation="0" sx="10" sy="3" sz="1" layer="2" texture="ground" repeatx="11" repeaty="3" flipx="0" flipy="1"/>
+      <Data name="ground3" type="sprite" color="rgb(255, 255, 255)" x="195" y="-10.5" z="0" rotation="0" sx="60" sy="3" sz="1" layer="2" texture="ground" repeatx="70" repeaty="3" flipx="0" flipy="1"/>
+      <Data name="brick5" type="sprite" color="rgb(255, 255, 255)" x="117.102" y="-0.906415" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v0" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="brick6" type="sprite" color="rgb(255, 255, 255)" x="121.005" y="-0.903752" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v0" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="stairs0" type="sprite" color="rgb(255, 255, 255)" x="218.59" y="-8.67988" z="0" rotation="0" sx="7" sy="9" sz="1" layer="1" texture="stairs1" repeatx="1" repeaty="1" flipx="1" flipy="1"/>
+      <Data name="pointbox4" type="sprite" color="rgb(255, 255, 255)" x="119.041" y="-0.903752" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="15" enable="1" index="0"/>
+      </Data>
+      <Data name="brick7" type="sprite" color="rgb(255, 255, 255)" x="127" y="8.28791" z="0" rotation="0" sx="6" sy="1" sz="1" layer="2" texture="brick_v2" repeatx="6" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="brick8" type="sprite" color="rgb(255, 255, 255)" x="142" y="8.28791" z="0" rotation="0" sx="6" sy="1" sz="1" layer="2" texture="brick_v2" repeatx="6" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="brick9" type="sprite" color="rgb(255, 255, 255)" x="147.469" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v2" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="pointbox5" type="sprite" color="rgb(255, 255, 255)" x="100" y="-0.903752" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="15" enable="1" index="0"/>
+      </Data>
+      <Data name="brick10" type="sprite" color="rgb(255, 255, 255)" x="160" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v2" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="brick11" type="sprite" color="rgb(255, 255, 255)" x="162" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v2" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="pointbox6" type="sprite" color="rgb(255, 255, 255)" x="170" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="10" enable="1" index="0"/>
+      </Data>
+      <Data name="pointbox7" type="sprite" color="rgb(255, 255, 255)" x="175" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="10" enable="1" index="0"/>
+      </Data>
+      <Data name="pointbox8" type="sprite" color="rgb(255, 255, 255)" x="180" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="10" enable="1" index="0"/>
+      </Data>
+      <Data name="pointbox9" type="sprite" color="rgb(255, 255, 255)" x="175" y="8" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="10" enable="1" index="0"/>
+      </Data>
+      <Data name="brick12" type="sprite" color="rgb(255, 255, 255)" x="190" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v2" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="brick13" type="sprite" color="rgb(255, 255, 255)" x="195" y="8" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v2" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="brick14" type="sprite" color="rgb(255, 255, 255)" x="197" y="8" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v2" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="brick15" type="sprite" color="rgb(255, 255, 255)" x="199" y="8" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v2" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="brick16" type="sprite" color="rgb(255, 255, 255)" x="208" y="8" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v0" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="brick17" type="sprite" color="rgb(255, 255, 255)" x="214" y="8" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v0" repeatx="1" repeaty="1" flipx="1" flipy="1"/>
+      <Data name="brick18" type="sprite" color="rgb(255, 255, 255)" x="210" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v2" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="brick19" type="sprite" color="rgb(255, 255, 255)" x="212" y="-1" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="brick_v2" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="pointbox10" type="sprite" color="rgb(255, 255, 255)" x="210" y="8" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="10" enable="1" index="0"/>
+      </Data>
+      <Data name="pointbox11" type="sprite" color="rgb(255, 255, 255)" x="212" y="8" z="0" rotation="0" sx="1" sy="1" sz="1" layer="2" texture="coinbox_v0" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="coinbox_anim" fps="10" enable="1" index="0"/>
+      </Data>
+      <Data name="stairs1" type="sprite" color="rgb(255, 255, 255)" x="237" y="-8.67988" z="0" rotation="0" sx="7" sy="9" sz="1" layer="1" texture="stairs1" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="stairs2" type="sprite" color="rgb(255, 255, 255)" x="245" y="-8" z="0" rotation="90" sx="8.5" sy="8" sz="1" layer="1" texture="stairs1" repeatx="1" repeaty="1" flipx="0" flipy="1"/>
+      <Data name="mario" type="sprite" color="rgb(255, 255, 255)" x="0" y="-7" z="0" rotation="180" sx="1.5" sy="1.5" sz="1" layer="3" texture="mario_stand" repeatx="1" repeaty="1" flipx="1" flipy="0">
+        <Animation name="mario_run" fps="30" enable="0" index="0"/>
+        <Script name="mario_movement" run="1">
+          <Var type="float" name="float" value="-0.00999982"/>
+          <Var type="bool" name="bool" value="0"/>
+          <Var type="bool" name="bool0" value="0"/>
+        </Script>
+        <Script name="mario_collisions" run="1">
+          <Var type="timer" name="timer"/>
+        </Script>
+      </Data>
+      <Data name="br_ground0" type="sprite" color="rgb(255, 255, 255)" x="35" y="-11.5" z="0" rotation="0" sx="68" sy="2.99" sz="1" layer="1" texture="ground" repeatx="90" repeaty="3" flipx="0" flipy="1"/>
+      <Data name="br_kill0" type="sprite" color="rgb(255, 255, 255)" x="-10.2034" y="-17.1932" z="0" rotation="0" sx="500" sy="1" sz="1" layer="3" texture="" repeatx="1" repeaty="1" flipx="0" flipy="0"/>
+    </Entity>
+  </Scene>
+  <Scene name="BetweenLevels" render="0">
+    <Entity>
+      <Data name="still_mario" type="sprite" color="rgb(255, 255, 255)" x="-0.775575" y="1.14157" z="0" rotation="0" sx="1" sy="1" sz="1" layer="0" texture="mario_stand" repeatx="1" repeaty="1" flipx="0" flipy="1">
+        <Animation name="mario_run" fps="15" enable="1" index="0"/>
+        <Script name="stage_wait" run="1">
+          <Var type="timer" name="timer"/>
+        </Script>
+      </Data>
+    </Entity>
+  </Scene>
+</Root>
