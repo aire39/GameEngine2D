@@ -1,0 +1,10 @@
+bin/*
+obj/*
+Scripts/*
+Fonts/*
+Shaders/*
+Textures/
+PishLibrary/*
+UI_Images/*
+Modules/*
+

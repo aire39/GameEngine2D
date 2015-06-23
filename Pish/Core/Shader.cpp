@@ -1,4 +1,7 @@
 #include "Shader.h"
+#ifndef __WIN32__
+#include <cstring>
+#endif // __WIN32__
 
 Shader::Shader()
 {

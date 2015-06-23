@@ -1,9 +1,6 @@
 #include <wx/app.h>
-#include "./window/winMng.h"
+#include "./Window/winMng.h"
 #include "./Dialogs/Splash.h"
-
-
-
 
 //////////////////////////
 //Application Main Class//
@@ -61,8 +58,8 @@ class MyApp: public wxApp
 bool MyApp::OnInit()
 {
     wxInitAllImageHandlers();
-    splash_bitmap.LoadFile("./UI_Images/splash.png", wxBITMAP_TYPE_PNG);
-    splashscreen = new Splash(NULL, splash_bitmap, 2000);
+    //splash_bitmap.LoadFile("./UI_Images/splash.png", wxBITMAP_TYPE_PNG);
+    //splashscreen = new Splash(NULL, splash_bitmap, 2000);
 
     m_wmgr = new winMng(0L, wxT(PROJECTVERSIONLABEL));
     m_wmgr->Show(true);

@@ -5,7 +5,7 @@
 
 #include <wx/richtext/richtextctrl.h>
 #include <wx/dialog.h>
-#include <wx/Listbook.h>
+#include <wx/listbook.h>
 #include <wx/panel.h>
 #include <wx/button.h>
 #include <wx/sizer.h>

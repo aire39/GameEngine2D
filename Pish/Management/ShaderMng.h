@@ -1,7 +1,7 @@
 #ifndef SHADERMNG_H
 #define SHADERMNG_H
 
-#include "../core/Shader.h"
+#include "../Core/Shader.h"
 #include <wx/glcanvas.h>
 #include <wx/msgdlg.h>
 #include <vector>

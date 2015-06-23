@@ -75,7 +75,8 @@ void winMng::InitPSH()
     color.Set(50, 50, 50);
     dockArt->SetColor(8, color);
 
-    //Object Instatiation
+    //Object Instantiation
+    /*
     toolbar = new toolBar(this);
     window_manager.AddPane(toolbar, wxTOP);
     window_manager.GetPane(toolbar).Gripper();
@@ -84,6 +85,7 @@ void winMng::InitPSH()
     window_manager.Update();
 
     toolbar->SetBackgroundColour(color);
+    */
 
     ///////////////////
     ///////////////////
@@ -133,7 +135,7 @@ void winMng::InitPSH()
 
     tree_view  = new projectTreeView(resource_window->notebookwindow(), 1006);
 
-/*
+
     toolbar_scene = new ToolBarScene(this);
     window_manager.AddPane(toolbar_scene, wxTOP);
     window_manager.GetPane(toolbar_scene).Gripper();
@@ -145,7 +147,7 @@ void winMng::InitPSH()
     window_manager.Update();
 
     win->BindToolBar(toolbar_scene);
-*/
+
     /////////////////////
     /////////////////////
     /////////////////////

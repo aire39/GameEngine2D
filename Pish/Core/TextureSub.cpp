@@ -2,6 +2,9 @@
 #include "../Core/Texture.h"
 #include <stdlib.h>
 #include <iostream>
+#ifndef __WIN32__
+#include <cstdio>
+#endif
 
 TextureSub::TextureSub()
 {
@@ -43,7 +46,12 @@ void TextureSub::chopfunc(int nrow, int ncol, int width_incr, int height_inc)
         for(int j=0; j<ncol; j++)
         {
             char hold[10];
+
+            #ifdef __WIN32__
             itoa( j+(i*ncol), hold, 10 );
+            #else
+            sprintf(hold, "%d", j+(i*ncol));
+            #endif
 
             std::string set_name;
             Texture * texture_sub = new Texture();

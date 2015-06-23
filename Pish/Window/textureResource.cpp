@@ -39,7 +39,8 @@ textureResource::~textureResource()
     texture_image_list = NULL;
     delete listview;
     listview = NULL;
-    delete notebook;
+    if(notebook != NULL)
+        delete notebook;
     notebook = NULL;
 }
 

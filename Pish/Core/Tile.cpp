@@ -75,7 +75,12 @@ void Tile::init(scriptMng * script_manager)
     {
         for(int j=0; j<cn_sprite; j++)
         {
+
+            #ifdef __WIN32__
             itoa(j+(i*cn_sprite), buf, 10);
+            #else
+            sprintf(buf, "%d", j+(i*cn_sprite));
+            #endif
             tile_subname = "tile_";
             tile_subname.append(buf);
             //std::cout << "*****TEST ADD TILE: PHASE III (LOOP)******" << std::endl;

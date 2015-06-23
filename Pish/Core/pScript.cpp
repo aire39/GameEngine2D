@@ -1,5 +1,9 @@
 #include "pScript.h"
 
+#ifndef __WIN32__
+#include <cstring>
+#endif
+
 pScript::pScript()
 {
     mode = 0;
@@ -267,7 +271,11 @@ std::string pScript::VarAlreadyIn(int type, std::string var_name)
                     while( mvar_timers.find(var_name.c_str()) != mvar_timers.end() )
                     {
                         var_name = "timer";
+                        #ifdef __WIN32__
                         itoa(i, hold, 10);
+                        #else
+                        sprintf(hold, "%d", i);
+                        #endif
                         var_name.append(hold);
                         i++;
                     }
@@ -281,7 +289,11 @@ std::string pScript::VarAlreadyIn(int type, std::string var_name)
                     while( mvar_timers.find(var_name.c_str()) != mvar_timers.end() )
                     {
                         var_name = var_hold;
+                        #ifdef __WIN32__
                         itoa(i, hold, 10);
+                        #else
+                        sprintf(hold, "%d", i);
+                        #endif
                         var_name.append(hold);
                         i++;
                     }
@@ -300,7 +312,11 @@ std::string pScript::VarAlreadyIn(int type, std::string var_name)
                     while( mvar_strs.find(var_name.c_str()) != mvar_strs.end() )
                     {
                         var_name = "string";
+                        #ifdef __WIN32__
                         itoa(i, hold, 10);
+                        #else
+                        sprintf(hold, "%d", i);
+                        #endif
                         var_name.append(hold);
                         i++;
                     }
@@ -314,7 +330,11 @@ std::string pScript::VarAlreadyIn(int type, std::string var_name)
                     while( mvar_strs.find(var_name.c_str()) != mvar_strs.end() )
                     {
                         var_name = var_hold;
+                        #ifdef __WIN32__
                         itoa(i, hold, 10);
+                        #else
+                        sprintf(hold, "%d", i);
+                        #endif
                         var_name.append(hold);
                         i++;
                     }
@@ -333,7 +353,11 @@ std::string pScript::VarAlreadyIn(int type, std::string var_name)
                     while( mvar_floats.find(var_name.c_str()) != mvar_floats.end() )
                     {
                         var_name = "float";
+                        #ifdef __WIN32__
                         itoa(i, hold, 10);
+                        #else
+                        sprintf(hold, "%d", i);
+                        #endif
                         var_name.append(hold);
                         i++;
                     }
@@ -347,7 +371,11 @@ std::string pScript::VarAlreadyIn(int type, std::string var_name)
                     while( mvar_floats.find(var_name.c_str()) != mvar_floats.end() )
                     {
                         var_name = var_hold;
+                        #ifdef __WIN32__
                         itoa(i, hold, 10);
+                        #else
+                        sprintf(hold, "%d", i);
+                        #endif
                         var_name.append(hold);
                         i++;
                     }
@@ -366,7 +394,12 @@ std::string pScript::VarAlreadyIn(int type, std::string var_name)
                     while( mvar_bools.find(var_name.c_str()) != mvar_bools.end() )
                     {
                         var_name = "bool";
+
+                        #ifdef __WIN32__
                         itoa(i, hold, 10);
+                        #else
+                        sprintf(hold, "%d", i);
+                        #endif
                         var_name.append(hold);
                         i++;
                     }
@@ -380,7 +413,11 @@ std::string pScript::VarAlreadyIn(int type, std::string var_name)
                     while( mvar_bools.find(var_name.c_str()) != mvar_bools.end() )
                     {
                         var_name = var_hold;
+                        #ifdef __WIN32__
                         itoa(i, hold, 10);
+                        #else
+                        sprintf(hold, "%d", i);
+                        #endif
                         var_name.append(hold);
                         i++;
                     }
@@ -399,7 +436,11 @@ std::string pScript::VarAlreadyIn(int type, std::string var_name)
                     while( mvar_ints.find(var_name.c_str()) != mvar_ints.end() )
                     {
                         var_name = "int";
+                        #ifdef __WIN32__
                         itoa(i, hold, 10);
+                        #else
+                        sprintf(hold, "%d", i);
+                        #endif
                         var_name.append(hold);
                         i++;
                     }
@@ -413,7 +454,11 @@ std::string pScript::VarAlreadyIn(int type, std::string var_name)
                     while( mvar_ints.find(var_name.c_str()) != mvar_ints.end() )
                     {
                         var_name = var_hold;
+                        #ifdef __WIN32__
                         itoa(i, hold, 10);
+                        #else
+                        sprintf(hold, "%d", i);
+                        #endif
                         var_name.append(hold);
                         i++;
                     }

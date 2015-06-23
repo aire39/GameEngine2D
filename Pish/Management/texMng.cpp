@@ -1,5 +1,9 @@
 #include "texMng.h"
 
+#ifndef __WIN32__
+#include <cstring>
+#endif
+
 texMng::texMng()
 {
     ctexture_name = "";

@@ -1,4 +1,4 @@
-#include "../Window/toolbar.h"
+#include "../Window/toolBar.h"
 
 toolBar::toolBar(wxWindow * parent) : wxToolBar(parent, -1)
 {

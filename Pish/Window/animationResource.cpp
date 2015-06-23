@@ -315,8 +315,11 @@ void animationResource::OnSize(wxSizeEvent & event)
     nw = notebook->GetClientSize().GetWidth();
     nh = notebook->GetClientSize().GetHeight();
 
-    txt_animname->Move( int(GetClientSize().GetWidth()*0.68), 0);
-    txt_setfps->Move( int(GetClientSize().GetWidth()*0.68), 20);
+    if(txt_animname != NULL)
+    {
+        //txt_animname->Move( (int)(nw*0.68), 0); // causes problems
+        //txt_setfps->Move( (int)(nw*0.68), 20);
+    }
 
     object_tree->SetSize( event.GetSize().GetWidth()/3, event.GetSize().GetHeight()-20 );
     animation_list->SetSize(event.GetSize().GetWidth()/3, 0, event.GetSize().GetWidth()/3, event.GetSize().GetHeight()-20);
@@ -530,7 +533,8 @@ void animationResource::DblClickListItem(wxListEvent & event)
 				#ifdef __WIN32__
 				name.append(_itoa(i, n, 10));
 				#else
-				name.append(itoa(i, n, 10));
+				sprintf(n, "%d", i);
+				name.append(n);
 				#endif
 			}
 

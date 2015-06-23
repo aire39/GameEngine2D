@@ -1,13 +1,13 @@
 #ifndef OGLWIN_H
 #define OGLWIN_H
 
-#include "../common/glee.h"
+#include "../Common/GLee.h"
 
 #include <wx/toolbar.h>
 #include <wx/sysopt.h>
 #include <wx/splitter.h>
 
-#include "../core/GLFrame.h"
+#include "../Core/GLFrame.h"
 #include "../Management/entityManager.h"
 #include "../Window/ToolBarScene.h"
 #include "../Window/projectTreeView.h"

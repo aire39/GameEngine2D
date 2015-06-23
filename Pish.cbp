@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Pish" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Pish" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="wx_baseu-3.0" />
+					<Add library="wx_gtk3u_core-3.0" />
+					<Add library="wx_gtk3u_richtext-3.0" />
+					<Add library="wx_gtk3u_adv-3.0" />
+					<Add library="wx_gtk3u_aui-3.0" />
+					<Add library="wx_gtk3u_propgrid-3.0" />
+					<Add library="wx_baseu_xml-3.0" />
+					<Add library="wx_gtk3u_stc-3.0" />
+					<Add library="wx_gtk3u_gl-3.0" />
+					<Add library="IL" />
+					<Add library="ILU" />
+					<Add library="ILUT" />
+					<Add library="boost_python" />
+					<Add library="python2.7" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Pish" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="wx_baseu-3.0" />
+					<Add library="wx_gtk3u_core-3.0" />
+					<Add library="wx_gtk3u_richtext-3.0" />
+					<Add library="wx_gtk3u_adv-3.0" />
+					<Add library="wx_gtk3u_aui-3.0" />
+					<Add library="wx_gtk3u_propgrid-3.0" />
+					<Add library="wx_baseu_xml-3.0" />
+					<Add library="wx_gtk3u_stc-3.0" />
+					<Add library="wx_gtk3u_gl-3.0" />
+					<Add library="IL" />
+					<Add library="ILU" />
+					<Add library="ILUT" />
+					<Add library="boost_python" />
+					<Add library="python2.7" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-D__WXGTK__" />
+			<Add option="-D__LINUX__" />
+			<Add directory="/usr/local/lib/wx/include/gtk3-unicode-3.0/" />
+			<Add directory="/usr/local/include/wx-3.0/" />
+			<Add directory="/usr/include/python2.7/" />
+		</Compiler>
+		<Linker>
+			<Add library="glee" />
+			<Add library="GL" />
+			<Add library="GLU" />
+			<Add directory="/usr/local/lib/" />
+		</Linker>
+		<Unit filename="Pish/Camera/Camera.cpp" />
+		<Unit filename="Pish/Camera/Camera.h" />
+		<Unit filename="Pish/Common/GApp.h" />
+		<Unit filename="Pish/Common/GLee.cpp" />
+		<Unit filename="Pish/Common/GLee.h" />
+		<Unit filename="Pish/Common/UtilityFunctions.h" />
+		<Unit filename="Pish/Common/amath.h" />
+		<Unit filename="Pish/Common/amath_old.h" />
+		<Unit filename="Pish/Common/amath_old2.h" />
+		<Unit filename="Pish/Common/amath_old3.h" />
+		<Unit filename="Pish/Common/frameEvent.cpp" />
+		<Unit filename="Pish/Common/frameEvent.h" />
+		<Unit filename="Pish/Common/glfont2.cpp" />
+		<Unit filename="Pish/Common/glfont2.h" />
+		<Unit filename="Pish/Common/primitives.h" />
+		<Unit filename="Pish/Common/pshdefs.h" />
+		<Unit filename="Pish/Common/pshsignals.h" />
+		<Unit filename="Pish/Common/scriptprefs.h" />
+		<Unit filename="Pish/Common/supportFunctions.h" />
+		<Unit filename="Pish/Common/threadWorker.h" />
+		<Unit filename="Pish/Common/wx_pch.h" />
+		<Unit filename="Pish/Common/wx_windiw_ids.h" />
+		<Unit filename="Pish/Core/Animation.cpp" />
+		<Unit filename="Pish/Core/Animation.h" />
+		<Unit filename="Pish/Core/CoreObjects.h" />
+		<Unit filename="Pish/Core/Entity.cpp" />
+		<Unit filename="Pish/Core/Entity.h" />
+		<Unit filename="Pish/Core/GLFrame.cpp" />
+		<Unit filename="Pish/Core/GLFrame.h" />
+		<Unit filename="Pish/Core/Mesh.cpp" />
+		<Unit filename="Pish/Core/Mesh.h" />
+		<Unit filename="Pish/Core/PSysBoids.cpp" />
+		<Unit filename="Pish/Core/PSysBoids.h" />
+		<Unit filename="Pish/Core/PSysExplode.cpp" />
+		<Unit filename="Pish/Core/PSysExplode.h" />
+		<Unit filename="Pish/Core/PSysSmoke.cpp" />
+		<Unit filename="Pish/Core/PSysSmoke.h" />
+		<Unit filename="Pish/Core/PSysSpray.cpp" />
+		<Unit filename="Pish/Core/PSysSpray.h" />
+		<Unit filename="Pish/Core/Particles.cpp" />
+		<Unit filename="Pish/Core/Particles.h" />
+		<Unit filename="Pish/Core/Shader.cpp" />
+		<Unit filename="Pish/Core/Shader.h" />
+		<Unit filename="Pish/Core/Sprite.cpp" />
+		<Unit filename="Pish/Core/Sprite.h" />
+		<Unit filename="Pish/Core/Text.cpp" />
+		<Unit filename="Pish/Core/Text.h" />
+		<Unit filename="Pish/Core/Texture.cpp" />
+		<Unit filename="Pish/Core/Texture.h" />
+		<Unit filename="Pish/Core/TextureBase.cpp" />
+		<Unit filename="Pish/Core/TextureBase.h" />
+		<Unit filename="Pish/Core/TextureSheet.cpp" />
+		<Unit filename="Pish/Core/TextureSheet.h" />
+		<Unit filename="Pish/Core/TextureSub.cpp" />
+		<Unit filename="Pish/Core/TextureSub.h" />
+		<Unit filename="Pish/Core/Tile.cpp" />
+		<Unit filename="Pish/Core/Tile.h" />
+		<Unit filename="Pish/Core/pScript.cpp" />
+		<Unit filename="Pish/Core/pScript.h" />
+		<Unit filename="Pish/Dialogs/ProjectDialog.cpp" />
+		<Unit filename="Pish/Dialogs/ProjectDialog.h" />
+		<Unit filename="Pish/Dialogs/Splash.cpp" />
+		<Unit filename="Pish/Dialogs/Splash.h" />
+		<Unit filename="Pish/Dialogs/chooseAnimBox.cpp" />
+		<Unit filename="Pish/Dialogs/chooseAnimBox.h" />
+		<Unit filename="Pish/Dialogs/chooseScriptBox.cpp" />
+		<Unit filename="Pish/Dialogs/chooseScriptBox.h" />
+		<Unit filename="Pish/Dialogs/createTexBlockDlg.cpp" />
+		<Unit filename="Pish/Dialogs/createTexBlockDlg.h" />
+		<Unit filename="Pish/Dialogs/entityDupDlg.cpp" />
+		<Unit filename="Pish/Dialogs/entityDupDlg.h" />
+		<Unit filename="Pish/Dialogs/prefdialog.cpp" />
+		<Unit filename="Pish/Dialogs/prefdialog.h" />
+		<Unit filename="Pish/IO/ProjectFile.cpp" />
+		<Unit filename="Pish/IO/ProjectFile.h" />
+		<Unit filename="Pish/IO/UIFile.cpp" />
+		<Unit filename="Pish/IO/UIFile.h" />
+		<Unit filename="Pish/Management/LayerManager.cpp" />
+		<Unit filename="Pish/Management/LayerManager.h" />
+		<Unit filename="Pish/Management/ShaderMng.cpp" />
+		<Unit filename="Pish/Management/ShaderMng.h" />
+		<Unit filename="Pish/Management/animationManager.cpp" />
+		<Unit filename="Pish/Management/animationManager.h" />
+		<Unit filename="Pish/Management/entityManager.cpp" />
+		<Unit filename="Pish/Management/entityManager.h" />
+		<Unit filename="Pish/Management/scriptMng.cpp" />
+		<Unit filename="Pish/Management/scriptMng.h" />
+		<Unit filename="Pish/Management/texMng.cpp" />
+		<Unit filename="Pish/Management/texMng.h" />
+		<Unit filename="Pish/Management/tileEntityManager.cpp" />
+		<Unit filename="Pish/PyFunc/misc_test_pyscripts.h" />
+		<Unit filename="Pish/PyFunc/pshEngine.cpp" />
+		<Unit filename="Pish/PyFunc/pshEngine.h" />
+		<Unit filename="Pish/PyFunc/pyFunc.h" />
+		<Unit filename="Pish/Window/DataPropertyViewer.cpp" />
+		<Unit filename="Pish/Window/DataPropertyViewer.h" />
+		<Unit filename="Pish/Window/OGLWin.cpp" />
+		<Unit filename="Pish/Window/OGLWin.h" />
+		<Unit filename="Pish/Window/ToolBarScene.cpp" />
+		<Unit filename="Pish/Window/ToolBarScene.h" />
+		<Unit filename="Pish/Window/ToolBarTextEditor.cpp" />
+		<Unit filename="Pish/Window/ToolBarTextEditor.h" />
+		<Unit filename="Pish/Window/animationResource.cpp" />
+		<Unit filename="Pish/Window/animationResource.h" />
+		<Unit filename="Pish/Window/projectTreeView.cpp" />
+		<Unit filename="Pish/Window/projectTreeView.h" />
+		<Unit filename="Pish/Window/propertyWindow.cpp" />
+		<Unit filename="Pish/Window/propertyWindow.h" />
+		<Unit filename="Pish/Window/resourceWindow.cpp" />
+		<Unit filename="Pish/Window/resourceWindow.h" />
+		<Unit filename="Pish/Window/textEditor.cpp" />
+		<Unit filename="Pish/Window/textEditor.h" />
+		<Unit filename="Pish/Window/textureResource.cpp" />
+		<Unit filename="Pish/Window/textureResource.h" />
+		<Unit filename="Pish/Window/toolBar.cpp" />
+		<Unit filename="Pish/Window/toolBar.h" />
+		<Unit filename="Pish/Window/winMng.cpp" />
+		<Unit filename="Pish/Window/winMng.h" />
+		<Unit filename="Pish/WizardPages/newprojectpage0.cpp" />
+		<Unit filename="Pish/WizardPages/newprojectpage0.h" />
+		<Unit filename="Pish/WizardPages/newprojectpage1.cpp" />
+		<Unit filename="Pish/WizardPages/newprojectpage1.h" />
+		<Unit filename="Pish/Wizards/NewProjectWiz.cpp" />
+		<Unit filename="Pish/Wizards/NewProjectWiz.h" />
+		<Unit filename="Pish/main.cpp" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

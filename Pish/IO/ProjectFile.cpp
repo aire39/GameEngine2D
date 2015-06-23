@@ -1,5 +1,9 @@
 #include "../IO/ProjectFile.h"
 
+#ifndef __WIN32__
+#include <cstring>
+#endif
+
 ProjectFile::ProjectFile()
 {
     animation_resource = NULL;
@@ -386,7 +390,13 @@ void ProjectFile::Save()
                     }
 
 
+
+                    #ifdef __WIN32__
                     itoa(entity->getLayer(), c_buffer, 10);
+                    #else
+                    sprintf(c_buffer, "%d", entity->getLayer());
+                    #endif
+
                     wxXmlAttribute * object_layer  = new wxXmlAttribute("layer" , c_buffer  , object_tail);
 
                     //wxXmlAttribute * object_scale  = new wxXmlAttribute("scale" , "3"  , NULL);

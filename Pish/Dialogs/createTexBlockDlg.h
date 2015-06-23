@@ -1,7 +1,7 @@
 #ifndef CREATETEXBLOCKDLG_H
 #define CREATETEXBLOCKDLG_H
 
-#include "../Common/glee.h"
+#include "../Common/GLee.h"
 
 #include <iostream>
 

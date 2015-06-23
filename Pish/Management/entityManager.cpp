@@ -1,5 +1,9 @@
 #include "../Management/entityManager.h"
 
+#ifndef __WIN32__
+#include <cstring>
+#endif
+
 entityManager::entityManager()
 {
     renderable = true;
@@ -173,7 +177,11 @@ void entityManager::addEntity(Entity * obj)
                 name_check.clear();
                 name_check = "empty_";
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -187,7 +195,11 @@ void entityManager::addEntity(Entity * obj)
                 name_check = object_name;
                 name_check.append("_");
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -225,7 +237,11 @@ void entityManager::addEntity(Entity * obj)
                 name_check.clear();
                 name_check = "sprite_";
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -239,7 +255,11 @@ void entityManager::addEntity(Entity * obj)
                 name_check = object_name;
                 name_check.append("_");
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -281,7 +301,11 @@ void entityManager::addEntity(Entity * obj)
                 name_check.clear();
                 name_check = "text_";
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -295,7 +319,11 @@ void entityManager::addEntity(Entity * obj)
                 name_check = object_name;
                 name_check.append("_");
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -371,7 +399,11 @@ Entity * entityManager::addEntity(std::string type, std::string object_name)
                     name_check.clear();
                     name_check = "empty_";
                     i++;
+                    #ifdef __WIN32__
                     itoa(i, buf, 10);
+                    #else
+                    sprintf(buf, "%d", i);
+                    #endif
                     name_check.append(buf);
                 }
 
@@ -385,7 +417,11 @@ Entity * entityManager::addEntity(std::string type, std::string object_name)
                     name_check = object_name;
                     name_check.append("_");
                     i++;
+                    #ifdef __WIN32__
                     itoa(i, buf, 10);
+                    #else
+                    sprintf(buf, "%d", i);
+                    #endif
                     name_check.append(buf);
                 }
 
@@ -425,7 +461,11 @@ Entity * entityManager::addEntity(std::string type, std::string object_name)
                 name_check.clear();
                 name_check = "sprite_";
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -440,7 +480,11 @@ Entity * entityManager::addEntity(std::string type, std::string object_name)
                 name_check = object_name;
                 name_check.append("_");
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -482,7 +526,11 @@ Entity * entityManager::addEntity(std::string type, std::string object_name)
                 name_check.clear();
                 name_check = "tile_";
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -496,7 +544,11 @@ Entity * entityManager::addEntity(std::string type, std::string object_name)
                 name_check = object_name;
                 name_check.append("_");
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -538,7 +590,11 @@ Entity * entityManager::addEntity(std::string type, std::string object_name)
                 name_check.clear();
                 name_check = "text_";
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -552,7 +608,11 @@ Entity * entityManager::addEntity(std::string type, std::string object_name)
                 name_check = object_name;
                 name_check.append("_");
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 

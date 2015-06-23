@@ -3,6 +3,9 @@
 #include <string>
 #include <sstream>
 #include <stdio.h>
+#ifndef __WIN32__
+#include <cstring>
+#endif
 
 inline std::string convertDouble(double value) {
   std::ostringstream o;

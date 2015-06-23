@@ -1,4 +1,4 @@
-#include "../Dialogs/prefDialog.h"
+#include "../Dialogs/prefdialog.h"
 
 
 prefDialog::prefDialog() : wxDialog(NULL, -1, wxString("Preferences"))

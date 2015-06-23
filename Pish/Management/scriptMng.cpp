@@ -1,6 +1,10 @@
 #include "../Management/scriptMng.h"
 #include "../PyFunc/pyFunc.h"
 
+#ifndef __WIN32__
+#include <cstring>
+#endif
+
 scriptMng::scriptMng()
 {
     camera = NULL;
@@ -251,14 +255,18 @@ pScript * scriptMng::addNewScript(std::string script_name, std::string object_na
     pScript * new_script = new pScript(this);
     new_script->setName(script_name);
 
-    //the key is different (probably bbecause of the relink ) than the script name since I'm aoutomatically attaching
+    //the key is different (probably because of the re-link ) than the script name since I'm automatically attaching
     //it to an object. may want to create a better way of doing this.
 
     scriptManager::iterator itt = script_manager.begin();
     if( itt != script_manager.end() )
     while( itt->second->getName().compare( script_name ) == 0 )
     {
+        #ifdef __WIN32__
         itoa(i, buf, 10);
+        #else
+        sprintf(buf, "%d", i);
+        #endif
 
         std::string tmp = "";
         tmp.append( script_name );
@@ -291,7 +299,11 @@ pScript * scriptMng::addNewScript(std::string script_name, std::string object_na
 
         while( script_manager2[object_name].find(script_name) != script_manager2[object_name].end() )
         {
+            #ifdef __WIN32__
             itoa(i, buf, 10);
+            #else
+            sprintf(buf, "%d", i);
+            #endif
 
             std::string tmp = "";
             tmp.append( script_name );

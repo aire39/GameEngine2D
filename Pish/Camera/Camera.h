@@ -1,10 +1,9 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-
-#include "../common/glee.h"
-#include <gl/glu.h>
-#include "../common/amath.h"
+#include "../Common/GLee.h"
+#include <GL/glu.h>
+#include "../Common/amath.h"
 #include "wx/gdicmn.h"
 using namespace vector_math;
 using namespace matrix_math;

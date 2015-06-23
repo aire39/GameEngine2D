@@ -140,10 +140,10 @@ void textEditor::OnSize(wxSizeEvent & event)
 
     button_panel->SetSize( (GetSize().GetWidth()/2) + (GetSize().GetWidth()/5), 25, GetSize().GetWidth()/2, GetSize().GetHeight() );
 
-    tool_bar->SetSize(wxSize(GetSize().GetWidth(), 25));
-    stop_button->SetSize( wxSize(20, 20) );
-    try_button->SetSize(  wxSize(20, 20) );
-    run_button->SetSize(  wxSize(20, 20) );
+    //tool_bar->SetSize(GetSize().GetWidth(), 25);
+    stop_button->SetSize( 20, 20);
+    try_button->SetSize(  20, 20);
+    run_button->SetSize(  20, 20);
 }
 
 void textEditor::OnButtonClicked(wxCommandEvent & event)

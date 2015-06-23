@@ -96,7 +96,7 @@ void DataPropertyViewer::BindTreeViewer( projectTreeView * tree_viewer )
 
 void DataPropertyViewer::SetDataName(std::string name)
 {
-    pg_name.SetValue(name.c_str());
+    pg_name.SetValue((name.c_str()));
 }
 
 void DataPropertyViewer::SetDataColor(float r, float g, float b)
@@ -114,7 +114,8 @@ void DataPropertyViewer::SetDataColor(float r, float g, float b)
     if( b < 1.0f )
         bvalue = 255*b;
 
-    pg_color.SetValue(&wxColour(rvalue, gvalue, bvalue));
+    wxColour * cc = new wxColour(rvalue, gvalue, bvalue);
+    pg_color.SetValue(cc);
 }
 
 void DataPropertyViewer::SetDataOpacity(float o)

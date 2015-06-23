@@ -53,7 +53,11 @@ void tileEntityManager::addEntity(std::string type, std::string parent_name, std
                     name_check.clear();
                     name_check = "object_";
                     i++;
+                    #ifdef __WIN32__
                     itoa(i, buf, 10);
+                    #else
+                    sprintf(buf, "%d", i);
+                    #endif
                     name_check.append(buf);
                 }
 
@@ -89,7 +93,11 @@ void tileEntityManager::addEntity(std::string type, std::string parent_name, std
                 name_check.clear();
                 name_check = "tileset_";
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 
@@ -124,7 +132,11 @@ void tileEntityManager::addEntity(std::string type, std::string parent_name, std
                 name_check.clear();
                 name_check = "object_";
                 i++;
+                #ifdef __WIN32__
                 itoa(i, buf, 10);
+                #else
+                sprintf(buf, "%d", i);
+                #endif
                 name_check.append(buf);
             }
 

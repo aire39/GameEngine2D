@@ -1,7 +1,7 @@
 #ifndef SHADER_H
 #define SHADER_H
 
-#include "../Common/glee.h"
+#include "../Common/GLee.h"
 #include <fstream>
 #include <iostream>
 #include <string>

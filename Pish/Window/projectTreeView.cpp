@@ -1,5 +1,5 @@
 #include <wx/msgdlg.h>
-#include "../window/projectTreeView.h"
+#include "../Window/projectTreeView.h"
 
 projectTreeView::projectTreeView(wxWindow * parent, wxWindowID id) : wxTreeCtrl(parent, id)
 {

@@ -1,9 +1,9 @@
 #ifndef SPRITE_H
 #define SPRITE_H
 
-#include "../common/glee.h"
-#include "../common/primitives.h"
-#include "../common/amath.h"
+#include "../Common/GLee.h"
+#include "../Common/primitives.h"
+#include "../Common/amath.h"
 #include "../Core/Entity.h"
 #include "../Core/Animation.h"
 #include "../Management/texMng.h"

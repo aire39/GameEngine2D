@@ -1,7 +1,7 @@
 #ifndef ANIMATIONRESOURCE_H
 #define ANIMATIONRESOURCE_H
 
-#include "../Common/glee.h"
+#include "../Common/GLee.h"
 
 #include <wx/notebook.h>
 #include <wx/panel.h>

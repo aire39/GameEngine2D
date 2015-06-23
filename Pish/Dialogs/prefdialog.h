@@ -3,6 +3,7 @@
 
 #include <wx/dialog.h>
 #include <wx/notebook.h>
+#include <wx/panel.h>
 
 class prefDialog : public wxDialog
 {

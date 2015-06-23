@@ -16,7 +16,7 @@ doesn't have to be a non power of 2 texture/image
 
 #include "../Core/TextureBase.h"
 
-#include <gl/gl.h>
+#include <GL/gl.h>
 #include "IL/il.h"
 #include "IL/ilu.h"
 

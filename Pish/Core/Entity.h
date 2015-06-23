@@ -2,8 +2,8 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#include "../Common/glee.h"
-#include <gl/glu.h>
+#include "../Common/GLee.h"
+#include <GL/glu.h>
 #include "../Common/amath.h"
 #include <string>
 
